@@ -1,0 +1,42 @@
+body{
+    background-color: white;
+}
+table{
+    margin-top:3%;
+}
+
+th{
+    font-size: 20px;
+}
+
+table,tr,td,th{
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: 0.3px solid black;
+    border-collapse: collapse;
+}
+td{
+    padding: 5px;
+    font-size: large;
+}
+input{
+    padding: 8px;
+    border-radius: 20px;
+    font-size: 15px;
+    border: 2px solid black;
+    width: 75%;
+}
+textarea{
+    border-radius: 20px;
+    font-size: 15px;
+    border: 2px solid black;
+}
+select{
+    padding: 8px;
+    border-radius: 20px;
+    font-size: 15px;
+    border: 2px solid black;
+    color: rgb(104, 101, 101);
+    background-color: white;
+    width: 75%;
+}

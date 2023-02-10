@@ -1,0 +1,8 @@
+#MoviePageBody{
+    background:linear-gradient(to left, rgba(0,0,0, 0) 35%, rgb(12, 12, 12),rgba(0,0,0,1)), url('../img/myimgs/avatarCover.jpg');
+    background-repeat:no-repeat;
+    background-size: 100%;
+    background-color: black;
+    z-index: 100;
+    height:auto;
+}

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+	<html lang="zxx" class="no-js">
+	<head>
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="img/fav.png">
+		<!-- Author Meta -->
+		<meta name="author" content="colorlib">
+		<!-- Meta Description -->
+		<meta name="description" content="">
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title>MovieFlix</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+			<!--
+			CSS
+			============================================= -->
+			<link rel="stylesheet" href="css/linearicons.css">
+			<link rel="stylesheet" href="css/font-awesome.min.css">
+			<link rel="stylesheet" href="css/bootstrap.css">
+			<link rel="stylesheet" href="css/magnific-popup.css">
+			<link rel="stylesheet" href="css/jquery-ui.css">				
+			<link rel="stylesheet" href="css/nice-select.css">							
+			<link rel="stylesheet" href="css/animate.min.css">
+			<link rel="stylesheet" href="css/owl.carousel.css">				
+			<link rel="stylesheet" href="css/main.css">
+            <style>
+                @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+                @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
+
+                body {
+                    font-family: "Montserrat", sans-serif;
+                    min-height: 100vh;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    background-color: #242333;
+                    color: #fff;
+                    margin: 0;
+                }
+
+                * {
+                    font-family: "Montserrat", sans-serif !important;
+                    box-sizing: border-box;
+                }
+
+                .movie-container {
+                    margin: 20px 0px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column
+                }
+
+                .movie-container select {
+                    appearance: none;
+                    -moz-appearance: none;
+                    -webkit-appearance: none;
+                    border: 0;
+                    padding: 5px 15px;
+                    margin-bottom: 40px;
+                    font-size: 14px;
+                    border-radius: 5px;
+                }
+
+                .container {
+                    perspective: 1000px;
+                    margin: 40px 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .seat {
+                    background-color: #444451;
+                    height: 25px;
+                    width: 40px;
+                    margin: 10px;
+                    text-align: center;
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                }
+
+                .selected {
+                background-color: #0081cb;
+                }
+
+                .occupied {
+                    background-color: #fff;
+                }
+
+                .seat:nth-of-type(2) {
+                    margin-right: 18px;
+                }
+
+                .seat:nth-last-of-type(2) {
+                    margin-left: 18px;
+                }
+
+                .seat:not(.occupied):hover {
+                    cursor: pointer;
+                    transform: scale(1.2);
+                }
+
+                .showcase .seat:not(.occupied):hover {
+                    cursor: default;
+                    transform: scale(1);
+                }
+
+                .showcase {
+                    display: flex;
+                    justify-content: space-between;
+                    list-style-type: none;
+                    background: rgba(0,0,0,0.1);
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    color: #777;
+                }
+
+                .showcase li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 10px;
+                }
+
+                .showcase li small {
+                    margin-left: 2px;
+                }
+
+                .row {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .screen {
+                    background: #fff;
+                    height: 70px;
+                    width: 125%;
+                    margin: 15px 0;
+                    transform: rotateX(-45deg);
+                    box-shadow: 0 3px 10px rgba(255,255,255,0.7);
+                }
+
+                p.text {
+                    padding-top: 20px;
+                }
+
+                p.text span {
+                color: #0081cb;
+                font-weight: 600;
+                box-sizing: content-box;
+                }
+
+                .credits a {
+                color: #fff;
+                }
+
+
+            </style>
+		</head>
+		<body>	
+			<header id="header">
+				
+				<div class="container-fluid main-menu">
+					<div class="row align-items-center justify-content-between d-flex">
+				      <div id="logo">
+				        <a href="index.html" style="color: white;text-decoration: none;font-size: 30px;font-weight: bold;">MovieFlix</a>
+				      </div>
+				      <nav id="nav-menu-container">
+				        <ul class="nav-menu">
+				          <li><a href="index.html">Home</a></li>
+				          <li><a href="movies.html">Movies</a></li>
+				          <li><a href="theatres.html">Theatres</a></li>
+				          <li><a href="contact.html">Contact</a></li>
+				          <li><a href="about.html">About</a></li>
+				          <li id="regButton"><a href="register.html">Register</a></li>
+				          <li id="adminButton"><a href="admin.html">Admin</a></li>
+				          <li class="menu-has-children" id="profileButtonMain"><a href="">Hello user!</a>
+				            <ul>
+				              <li><a href="profile.html">Profile</a></li>
+				              <li><a href="" id="lgout">Log Out</a></li>
+				            </ul>
+				          </li>	
+				        </ul>
+				      </nav><!-- #nav-menu-container -->					      		  
+					</div>
+				</div>
+            </header><!-- #header -->
+            <div class="movie-container">
+                
+                <div class="container" style="padding-top:10%">
+                    <ul class="showcase">
+                        <li>
+                            <div class="seat"></div>
+                            <small>N/A</small>
+                        </li>
+                        <li>
+                            <div class="seat selected"></div>
+                            <small>Selected</small>
+                        </li>
+                        <li>
+                            <div class="seat occupied"></div>
+                        <small>Occupied</small>
+                        </li>    
+                    </ul>
+                <div class="screen"></div>
+                
+                <div class="row">
+                    <div class="seat" onclick="colorchange(this.id)"  id="1">1</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="2">2</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="3">3</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="4">4</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="5">5</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="6">6</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="7">7</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="8">8</div>
+                    </div>
+                    <div class="row">
+                    <div class="seat" onclick="colorchange(this.id)" id="9">9</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="10">10</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="11">11</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="12">12</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="13">13</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="14">14</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="15">15</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="16">16</div>
+                    </div>
+                    <div class="row">
+                    <div class="seat" onclick="colorchange(this.id)" id="17">17</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="18">18</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="19">19</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="20">20</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="21">21</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="22">22</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="23">23</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="24">24</div>
+                    </div>
+                    <div class="row">
+                    <div class="seat" onclick="colorchange(this.id)" id="25">25</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="26">26</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="27">27</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="28">28</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="29">29</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="30">30</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="31">31</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="32">32</div>
+                    </div>
+                    <div class="row">
+                    <div class="seat" onclick="colorchange(this.id)" id="33">33</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="34">34</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="35">35</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="36">36</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="37">37</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="38">38</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="39">39</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="40">40</div>
+                    </div>
+                    <div class="row">
+                    <div class="seat" onclick="colorchange(this.id)" id="41">41</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="42">42</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="43">43</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="44">44</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="45">45</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="46">46</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="47">47</div>
+                    <div class="seat" onclick="colorchange(this.id)" id="48">48</div>
+                    </div>
+                
+                <p class="text">
+                    You have selected <span id="counter">0</span> seats for the total price of Rs. <span id="total">0</span>
+                </p>
+                </div>
+            </div>
+            <div onclick="confirmbooking()" style="width:100%;display: flex;justify-content: center;align-items: center;padding: 15px;position: absolute;bottom: 0;"><div style="background-color: black;color: white;padding: 10px;border-radius: 20px;font-size:17px;cursor: pointer;">Confirm Booking</div></div>
+            <script>
+				
+                    var email=localStorage.getItem("currentLoginUser");
+					var owneremail=localStorage.getItem(email);
+					if(email!=null && email!=1){
+						$("#regButton").css("display","none");
+						$("#profileButtonMain").css("display","block");
+					}
+					else{
+						$("#regButton").css("display","block");
+						$("#profileButtonMain").css("display","none");
+					}
+					if(email=="admin@gmail.com"){
+						$("#adminButton").css("display","block");
+					}
+					else{
+						$("#adminButton").css("display","none");
+					}
+					if(owneremail==null){
+						$("#theatreButton").css("display","none");
+					}
+					else{
+						$("#theatreButton").css("display","block");
+					}
+            
+        </script>
+
+        <script src="js/vendor/jquery-2.2.4.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>			
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>		
+        <script src="js/jquery-ui.js"></script>					
+        <script src="js/easing.min.js"></script>			
+        <script src="js/hoverIntent.js"></script>
+        <script src="js/superfish.min.js"></script>	
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>						
+        <script src="js/jquery.nice-select.min.js"></script>					
+        <script src="js/owl.carousel.min.js"></script>							
+        <script src="js/mail-script.js"></script>	
+        <script src="js/main.js"></script>	
+        <script src="myjs/common.js"></script>
+        <script src="myjs/booking.js"></script>
+        </body>
+        </html>
+
+
+
