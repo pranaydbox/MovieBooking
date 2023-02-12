@@ -9,6 +9,7 @@ movieRoute.post("/getownermovies",movieController.getownermovies)
 movieRoute.post("/removeownermovie",movieController.removeownermovie)
 movieRoute.get("/gettopsixmovies",movieController.gettopsixmovies)
 movieRoute.post("/getexistingmovies",movieController.getexistingmovies)
+movieRoute.post("/removemovie",movieController.removemovie)
 
 
 module.exports=movieRoute;

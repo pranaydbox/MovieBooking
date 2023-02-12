@@ -29,31 +29,7 @@ window.onload=()=>{
 }
 
 
-$(document).ready(()=>{
-    $("#submitTheatre").click(()=>{
-        if(localStorage.getItem("movieId")==null){
-            localStorage.setItem("movieId",1);
-        }
-        var obj={
-            movieId:localStorage.getItem("movieId"),
-            cardImage:$("#movie_image").val(),
-            coverImage:$("#cover_image").val(),
-            name:$("#movie_name").val(),
-            category:$("#category").val(),
-            duration:$("#duration").val(),
-            languages:$("#language").val(),
-            format:$("#format").val(),
-            description:$("#description").val(),
-            bookings:0,
-            access:"true",
-            curremail:localStorage.getItem("currentLoginUser")
-        }
-        $.post("http://localhost:3333/movies/addmovie",obj,(xhr,status,responseText)=>{
-            alert(responseText.responseText);
-        })
-        localStorage.setItem("movieId",parseInt(localStorage.getItem("movieId"))+1);
-    })
-})
+
 
 function addexistingmovie(movieId){
     $.post("http://localhost:3333/movies/addexisting/"+movieId,{curremail:localStorage.getItem("currentLoginUser")},(xhr,status,responseText)=>{

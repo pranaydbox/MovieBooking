@@ -1,22 +1,11 @@
 var moviemodel=require("../models/movieModel")
 var theatremodel=require("../models/theatreModel")
 var theatreController=require("./theatreController")
-
-
+var reviewmodel=require("../models/reviewModel");
+var reviewController=require("../controllers/reviewController")
 
 
 async function addmovie(req,res){
-    console.log(req.body.curremail)
-
-    let data=await theatremodel.theatreModel.findOne({ownerEmail:req.body.curremail});
-
-    var obj={
-        theatreId:data.theatreId,
-        theatreName:data.theatreName,
-        category:data.category,
-        location:data.location
-    }  
-    
     var movie=new moviemodel.movieModel({
         movieId:req.body.movieId,
         cardImage:req.body.cardImage,
@@ -28,23 +17,16 @@ async function addmovie(req,res){
         format:req.body.format,
         description:req.body.description,
         bookings:req.body.bookings,
-        access:req.body.access
+        access:req.body.access,
     })
-
-    theatreController.updatetheatre(req.body.movieId,req.body.name,req.body.cardImage,req.body.curremail);
-
     let result=await movie.save();
-    
-    let x=await moviemodel.movieModel.updateOne({movieId:req.body.movieId},{$push:{theatreObjects:obj}});
-    console.log(x);
-
+    var review=new reviewmodel.reviewModel({
+        movieId:req.body.movieId,
+    })
+    await review.save();
     res.send("Movie added successfully")
     
 }
-
-
-
-
 
 
 
@@ -69,14 +51,11 @@ async function addexisting(req,res){
 
 
 function getownermovies(req,res){
-    console.log(req.body.curremail)
     theatremodel.theatreModel.findOne({ownerEmail:req.body.curremail},(err,data)=>{
         console.log(data);
         res.send(data.movieObjects);
     });
 }
-
-
 
 
 function getmovies(req,res){
@@ -115,7 +94,12 @@ async function getexistingmovies(req,res){
     })
 }
 
+async function removemovie(req,res){
+    await moviemodel.movieModel.deleteOne({movieId:req.body.movieId})
+    await theatremodel.theatreModel.updateMany({},{$pull:{movieObjects:{movieId:req.body.movieId}}})
+    await reviewController.removereviews(req.body.movieId);
+    res.send("Successfully deleted movie");
+}
 
 
-
-module.exports={addmovie,getmovies,getmovie,addexisting,getownermovies,removeownermovie,gettopsixmovies,getexistingmovies};
+module.exports={addmovie,getmovies,getmovie,addexisting,getownermovies,removeownermovie,gettopsixmovies,getexistingmovies,removemovie};

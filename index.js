@@ -27,4 +27,7 @@ var bookingRouter=require("./routes/bookingRoute");
 app.use("/bookings",bookingRouter);
 
 
+var reviewRouter=require("./routes/reviewRoute");
+app.use("/reviews",reviewRouter);
+
 app.listen(3333)

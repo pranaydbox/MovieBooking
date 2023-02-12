@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+ <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -322,7 +322,7 @@
           <div class="row" >
 
             <!-- Sales Card -->
-            <div class="col-xxl-4 col-md-6" id="users-btn" onclick="displayUsers()" style="cursor: pointer;">
+            <div class="col-xxl-3 col-md-6" id="users-btn" onclick="displayUsers()" style="cursor: pointer;">
               <div class="card info-card sales-card" style="background-color: #404e67;" id="users-background">
 
                 <div class="filter" >
@@ -355,11 +355,42 @@
 
               </div>
             </div><!-- End Sales Card -->
+            <div class="col-xxl-3 col-md-6" id="movies-btn" onclick="displayMovies()" style="cursor: pointer;">
+              <div class="card info-card revenue-card" id="movies-background">
 
-            <!-- Revenue Card -->
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body movies-text">
+                  <h5 class="card-title movies-text">Movies</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-film"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6 id="countOfPlaces" class="movies-text">0</h6>
+                      <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">movies</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
             
 
-            <div class="col-xxl-4 col-md-6" id="theatres-btn" onclick="displayTheatres()" style="cursor: pointer;">
+            <div class="col-xxl-3 col-md-6" id="theatres-btn" onclick="displayTheatres()" style="cursor: pointer;">
               <div class="card info-card revenue-card" id="theatres-background">
 
                 <div class="filter">
@@ -393,7 +424,7 @@
             </div><!-- End Revenue Card -->
 
             <!-- Customers Card -->
-            <div class="col-xxl-4  col-md-6" id="queries-btn" onclick="displayqueries()" style="cursor: pointer;">
+            <div class="col-xxl-3  col-md-6" id="queries-btn" onclick="displayqueries()" style="cursor: pointer;">
 
               <div class="card info-card customers-card" id="enquiries-background">
 
@@ -470,50 +501,31 @@
 
                 </div>
 
-                
 
+                <div class="card-body">
 
-                
+                  <div class="table table-borderless datatable" id="addMoviesData"  style="display:none">
+                    <div class="col-lg-6 form-group" >
+                      <input name="name" placeholder="Enter movie name" onfocus="this.placeholder = ''"  class="common-input mb-20 form-control" required="" type="text" id="movie_name">
+                      <input name="name" placeholder="Enter Category" onfocus="this.placeholder = ''"  class="common-input mb-20 form-control" required="" type="text" id="category">
+                      <input name="name" placeholder="Enter format" onfocus="this.placeholder = ''"  class="common-input mb-20 form-control" required="" type="text" id="format">
+                      <input name="name" placeholder="Enter duration" onfocus="this.placeholder = ''"  class="common-input mb-20 form-control" required="" type="text" id="duration">
+                      <input name="name" placeholder="Enter Language" onfocus="this.placeholder = ''"  class="common-input mb-20 form-control" required="" type="text" id="language">
+                      <input name="name" placeholder="Upload movie image" onfocus="this.placeholder = ''"  class="common-input mb-20 form-control" required="" type="text" id="movie_image">
+                      <input name="name" placeholder="Upload cover image" onfocus="this.placeholder = ''"  class="common-input mb-20 form-control" required="" type="text" id="cover_image">                
+                      <textarea class="common-textarea form-control" name="message" placeholder="Enter description" onfocus="this.placeholder = ''" required="" id="description"></textarea>	
+                      <button class="genric-btn primary" style="float: right;" id="submitTheatre">Submit!</button>			
+                  </div>                    
+                  </div>
 
-                <div class="card-body" id="addTheatresData" style="display: none;">
-                  <!---
-                  <div style="display: flex;flex-direction:row;align-items:center;justify-content:space-evenly;margin: auto;border: 2px solid white;border-radius: 20px;background-color: rgb(205, 201, 201);padding-top:20px;flex-wrap:wrap ;padding-bottom: 20px;">
-        
-                    <div style="display: flex;flex-direction:column;justify-content: center;align-items: center;flex-basis: 420px;">
-                      <input type="text" id="addTheatreImUrl" placeholder="Theatre Image" required><br>
-                      <input type="text" id="addTheatreName" placeholder="Theatre Name"  required><br>
-                      <input type="text" id="addTheatreLocation" placeholder="Theatre Location"  required><br>
-                      <input type="text" id="addTheatreId" placeholder="Theatre Id" required>
-                    </div>
-                    <div style="display: flex;flex-direction:column;justify-content: center;align-items: center;flex-basis: 420px;">
-                         
-                      <div style="background-color: white;display: flex;flex-direction: column;justify-content: center;align-items: center;padding:6px;border-radius: 20px;">
-                        <select name="Select Movie" id="addMovieSelect" style="width: 97%;">
-                          <option value="null">Select Movie</option>
-                          <option value="Movie1">Movie1</option>
-                          <option value="Movie2">Movie2</option>
-                          <option value="Movie3">Movie3</option>
-                        </select><br>  
-                        <input type="number" placeholder="Price" style="width: 97%;" id="moviePrice">
-                        <div style="display: flex;flex-direction: row;justify-content: space-between;align-items: flex-end;padding: 10px;">
-                          <div style="display:flex;flex-direction:column;align-items:center;">
-                            <label>StartDate</label>
-                            <input type="date" placeholder="Start Date" style="width:97%; " id="movieStartDate">
-                          </div>
-                          <div style="display:flex;flex-direction:column;align-items:center;">
-                            <label>EndDate</label>
-                            <input type="date" placeholder="End Date" style="width:97%;" id="movieEndDate">
-                          </div>
-                        </div>
-                        <div style="cursor:pointer;background-color:black;color:white;border:2px solid white;text-align: center;padding:10px;border-radius:30px;" id="MovieSaveAndAddBtn">Save Movie & Add another</div>
-                      </div>         
-                  </div>  
-                </div> 
-                <div style="display:flex;justify-content: center;">
-                  <div id="addTheatreBtn" style="cursor:pointer;width:20%;background-color:black;color:white;border:2px solid white;text-align: center;padding:15px;border-radius:30px;">Add Theatre</div>  
-                </col-12div>                
                 </div>
-              -->
+
+                
+
+
+                
+
+                <div class="card-body" id="addTheatresData" style="display: none;">      
 
 
               <div class="event-schedule-area-two bg-color pad100">
@@ -709,16 +721,21 @@
         </a>
       </li><!-- End Dashboard Nav -->
       <li class="nav-item" style="cursor: pointer;color: black;">
-        <a class="nav-link "onclick="displayUsers()">
+        <a class="nav-link" onclick="displayUsers()">
           <i class="bi bi-grid" style="color: black;"></i>
           <span style="color: black;">Users List</span>
         </a>
       </li><!-- End Dashboard Nav -->
-      
+      <li class="nav-item" style="cursor: pointer;">
+        <a class="nav-link " onclick="displayMovies()">
+          <i class="bi bi-grid" style="color: black;"></i>
+          <span style="color: black;">Movies</span>
+        </a>
+      </li>
       <li class="nav-item" style="cursor: pointer;">
         <a class="nav-link " onclick="displayTheatres()">
           <i class="bi bi-grid" style="color: black;"></i>
-          <span style="color: black;">Add Theatre</span>
+          <span style="color: black;">Theatres</span>
         </a>
       </li>
       <li class="nav-item" style="cursor: pointer;">

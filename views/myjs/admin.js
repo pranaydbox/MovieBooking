@@ -70,6 +70,14 @@ function displayMovies(){
     $("#enquiries").css("display","none")
 }
 
+
+function displayqueries(){
+    $("#usersData").css("display","none")
+    $("#addMoviesData").css("display","none")
+    $("#addTheatresData").css("display","none")
+    $("#enquiries").css("display","table")
+}
+
 function displayTheatres(){
     $("#usersData").css("display","none")
     $("#addMoviesData").css("display","none")
@@ -131,12 +139,7 @@ function rejecttheatre(ownerEmail){
     })
 }
 
-function displayqueries(){
-    $("#usersData").css("display","none")
-    $("#addMoviesData").css("display","none")
-    $("#addTheatresData").css("display","none")
-    $("#enquiries").css("display","table")
-}
+
 
 var theatreArr=[]
 var movieArr=[]
@@ -361,4 +364,31 @@ $(document).ready(()=>{
 
 
 
+})
+
+
+
+$(document).ready(()=>{
+    $("#submitTheatre").click(()=>{
+        if(localStorage.getItem("movieId")==null){
+            localStorage.setItem("movieId",1);
+        }
+        var obj={
+            movieId:localStorage.getItem("movieId"),
+            cardImage:$("#movie_image").val(),
+            coverImage:$("#cover_image").val(),
+            name:$("#movie_name").val(),
+            category:$("#category").val(),
+            duration:$("#duration").val(),
+            languages:$("#language").val(),
+            format:$("#format").val(),
+            description:$("#description").val(),
+            bookings:0,
+            access:"true"
+        }
+        $.post("http://localhost:3333/movies/addmovie",obj,(xhr,status,responseText)=>{
+            alert(responseText.responseText);
+        })
+        localStorage.setItem("movieId",parseInt(localStorage.getItem("movieId"))+1);
+    })
 })
