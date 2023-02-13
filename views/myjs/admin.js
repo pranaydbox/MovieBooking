@@ -9,8 +9,34 @@ window.onload=()=>{
         $.post("http://localhost:3333/theatres/getacceptedtheatres",{ownerEmail:localStorage.getItem("currentLoginUser")},(data,status)=>{
             addAcceptedTheatrestoAdmin(data);
         })
+        $.get("http://localhost:3333/movies/getmovies",(data,status)=>{
+            addMoviesToAdmin(data);
+        })
     })
+}
 
+function addMoviesToAdmin(arr){
+    for(x in arr){
+        obj=arr[x];
+        var ele=document.createElement("div");
+        ele.className="list-group-item pt-0";
+        ele.id=obj.movieId;
+        ele.innerHTML=`<div style="display: flex;flex-direction: column;border: 1px solid black;">
+            <img src="img/myimgs/${obj.cardImage}">
+            <div>${obj.name}</div>
+            <a href="reviews.html#${obj.movieId}"+>Reviews</a>
+            <div onclick="deletemovie('${obj.movieId}')">Remove Movie</div>
+        </div>`
+        $("#allMoviesData").append(ele);
+    }
+}
+
+
+function deletemovie(movieId){
+    alert(100);
+    $.post("http://localhost:3333/movies/removemovie",{movieId:movieId},(hr,status,data)=>{
+        alert(responseText.responseText);
+    })
 }
 
 function addAcceptedTheatrestoAdmin(obj){
@@ -383,6 +409,7 @@ $(document).ready(()=>{
             languages:$("#language").val(),
             format:$("#format").val(),
             description:$("#description").val(),
+            startDate:$('#startDate').val(),
             bookings:0,
             access:"true"
         }

@@ -18,6 +18,7 @@ async function addmovie(req,res){
         description:req.body.description,
         bookings:req.body.bookings,
         access:req.body.access,
+        startDate:req.body.startDate
     })
     let result=await movie.save();
     var review=new reviewmodel.reviewModel({

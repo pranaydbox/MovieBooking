@@ -9,13 +9,13 @@ window.onload=function(){
             }
             temp=temp+"<select>"
             $("#theatresOnloadContainer").append(
-                `<div class="col-lg-4">
-                <div class="single-destinations">
+                `<div class="col-lg-4" style="color:black">
+                <div class="single-destinations" >
                     <div class="thumb">
                         <img src="img/myimgs/${obj.theatreImage}" alt="">
                     </div>
                     <div class="details">
-                        <h4 class="d-flex justify-content-between">
+                        <h4 class="d-flex justify-content-between" style="color:black">
                             <span>${obj.theatreName}</span>                              	
                             <div class="star">
                                 <span class="fa fa-star checked"></span>

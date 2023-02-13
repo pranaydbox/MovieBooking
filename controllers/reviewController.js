@@ -8,8 +8,10 @@ async function addreview(req,res){
         name:req.body.name,
         email:req.body.email,
         rating:req.body.rating,
-        review:req.body.review
+        review:req.body.review,
+        date:req.body.date
     }
+    console.log(obj);
     await reviewmodel.reviewModel.updateOne({movieId:req.body.movieId},{$push:{reviews:obj}});
     await moviemodel.movieModel.updateOne({movieId:req.body.movieId},{$push:{reviewObjects:obj}})
     res.send("Review added successfully");
@@ -17,9 +19,15 @@ async function addreview(req,res){
 
 
 async function removereviews(movieId){
-    console.log(movieId);
-    await reviewmodel.reviewModel.deleteOne({movieId:"req.body.movieId"})
+    await reviewmodel.reviewModel.deleteOne({movieId:movieId})
 }
 
 
-module.exports={addreview,removereviews};
+function getreviews(req,res){
+    reviewmodel.reviewModel.findOne({movieId:req.body.movieId},(err,data)=>{
+        res.send(data.reviews);
+    })
+}
+
+
+module.exports={addreview,removereviews,getreviews};
