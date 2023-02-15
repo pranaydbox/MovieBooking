@@ -10,13 +10,9 @@ th{
 }
 
 table,tr,td,th{
-    background-color: rgb(255, 255, 255);
-    color: black;
-    border: 0.3px solid black;
     border-collapse: collapse;
 }
 td{
-    padding: 5px;
     font-size: large;
 }
 input{
@@ -39,4 +35,12 @@ select{
     color: rgb(104, 101, 101);
     background-color: white;
     width: 75%;
+}
+
+label{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
 }

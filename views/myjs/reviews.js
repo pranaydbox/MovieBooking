@@ -3,14 +3,9 @@ window.onload=()=>{
         var data=JSON.parse(responseText.responseText);
         
         for(x in data){
-            // $("#reviewContainer").append(
-            //     ` <div style="display: flex;flex-direction: row;background-color:black;justify-content: space-evenly;align-items: center;">
-            //             <div>${obj[x].name}</div>
-            //             <div>${obj[x].email}</div>
-            //             <div>${obj[x].rating}</div>
-            //             <div>${obj[x].review}</div>
-            //         </div>`
-            // )
+            // var diffTime=Math.abs(new Date().getTime()-data[x].date.getTime());
+            // console.log(data[x].date.getTime()+":"+new Date().getTime())
+            // var diffdays=Math.ceil(diffTime / (1000 * 60 * 60 * 24));
             var temp="";
             var y=0;
             for(var i=0;i<parseInt(data[x].rating);i++){

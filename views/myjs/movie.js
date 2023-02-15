@@ -1,13 +1,11 @@
 window.onload=()=>{
     var hash=window.location.hash.substring(1);
-
-    
     $.get("http://localhost:3333/movies/getmovie/"+hash,(data,status)=>{
-        $("#movieCardImage").attr("src","./img/myimgs/"+data.cardImage);
+        $("#movieCardImage").attr("src","../"+data.cardImage);
         $("#movieCardName").html(data.name);
         $("#movieCardDescription").html(data.description);
-        var url="./img/myimgs/"+data.coverImage;
-        $("#rateNowButton").attr("onclick",`addreview({movieId:'${data.movieId}',name:'Rohith',email:'rohith@gmail.com',rating:'10',review:'Good movie',date:'2022-06-17T11:06:50.369Z'})`)
+        var url="../"+data.coverImage;
+        $("#rateNowButton").attr("onclick",`addreview({movieId:'${data.movieId}',name:'Rohith',email:'rohith@gmail.com',rating:'3',review:'Good movie'})`)
         $("#MoviePageBody").css({"background":"linear-gradient(to left, rgba(0,0,0, 0) 35%, rgb(12, 12, 12),rgba(0,0,0,1)),"+"url("+url+")","background-repeat":"no-repeat","background-size": "100%","z-index": "100", "height":"auto"})
         $("#moviecategory").html(data.category);
         $("#movieformat").html(data.format);

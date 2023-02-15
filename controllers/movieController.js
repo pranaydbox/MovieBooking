@@ -8,8 +8,8 @@ var reviewController=require("../controllers/reviewController")
 async function addmovie(req,res){
     var movie=new moviemodel.movieModel({
         movieId:req.body.movieId,
-        cardImage:req.body.cardImage,
-        coverImage:req.body.coverImage,
+        cardImage:req.files.cardImage[0].path,
+        coverImage:req.files.coverImage[0].path,
         name:req.body.name,
         category:req.body.category,
         duration:req.body.duration,

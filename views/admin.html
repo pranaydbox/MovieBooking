@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
- <head>
+<head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -9,24 +9,21 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
   <!--For datatable-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <script src="//cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
-  
-  
   <!--Theatre vendors accept & reject-->
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -37,256 +34,292 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="mycss/admin.css">  
+  <link rel="stylesheet" href="mycss/admin.css">
   <style type="text/css">
-    body{margin-top:20px;}
+    body {
+      margin-top: 20px;
+    }
+
     .event-schedule-area .section-title .title-text {
-        margin-bottom: 50px;
+      margin-bottom: 50px;
     }
-    
+
     .event-schedule-area .tab-area .nav-tabs {
-        border-bottom: inherit;
+      border-bottom: inherit;
     }
-    
+
     .event-schedule-area .tab-area .nav {
-        border-bottom: inherit;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        margin-top: 80px;
+      border-bottom: inherit;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      margin-top: 80px;
     }
-    
+
     .event-schedule-area .tab-area .nav-item {
-        margin-bottom: 75px;
+      margin-bottom: 75px;
     }
+
     .event-schedule-area .tab-area .nav-item .nav-link {
-        text-align: center;
-        font-size: 22px;
-        color: #333;
-        font-weight: 600;
-        border-radius: inherit;
-        border: inherit;
-        padding: 0px;
-        text-transform: capitalize !important;
+      text-align: center;
+      font-size: 22px;
+      color: #333;
+      font-weight: 600;
+      border-radius: inherit;
+      border: inherit;
+      padding: 0px;
+      text-transform: capitalize !important;
     }
+
     .event-schedule-area .tab-area .nav-item .nav-link.active {
-        color: #4125dd;
-        background-color: transparent;
+      color: #4125dd;
+      background-color: transparent;
     }
-    
+
     .event-schedule-area .tab-area .tab-content .table {
-        margin-bottom: 0;
-        width: 80%;
+      margin-bottom: 0;
+      width: 80%;
     }
+
     .event-schedule-area .tab-area .tab-content .table thead td,
     .event-schedule-area .tab-area .tab-content .table thead th {
-        border-bottom-width: 1px;
-        font-size: 20px;
-        font-weight: 600;
-        color: #252525;
+      border-bottom-width: 1px;
+      font-size: 20px;
+      font-weight: 600;
+      color: #252525;
     }
+
     .event-schedule-area .tab-area .tab-content .table td,
     .event-schedule-area .tab-area .tab-content .table th {
-        border: 1px solid #b7b7b7;
-        padding-left: 30px;
+      border: 1px solid #b7b7b7;
+      padding-left: 30px;
     }
+
     .event-schedule-area .tab-area .tab-content .table tbody th .heading,
     .event-schedule-area .tab-area .tab-content .table tbody td .heading {
-        font-size: 16px;
-        text-transform: capitalize;
-        margin-bottom: 16px;
-        font-weight: 500;
-        color: #252525;
-        margin-bottom: 6px;
+      font-size: 16px;
+      text-transform: capitalize;
+      margin-bottom: 16px;
+      font-weight: 500;
+      color: #252525;
+      margin-bottom: 6px;
     }
+
     .event-schedule-area .tab-area .tab-content .table tbody th span,
     .event-schedule-area .tab-area .tab-content .table tbody td span {
-        color: #4125dd;
-        font-size: 18px;
-        text-transform: uppercase;
-        margin-bottom: 6px;
-        display: block;
+      color: #4125dd;
+      font-size: 18px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: block;
     }
+
     .event-schedule-area .tab-area .tab-content .table tbody th span.date,
     .event-schedule-area .tab-area .tab-content .table tbody td span.date {
-        color: #656565;
-        font-size: 14px;
-        font-weight: 500;
-        margin-top: 15px;
+      color: #656565;
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 15px;
     }
+
     .event-schedule-area .tab-area .tab-content .table tbody th p {
-        font-size: 14px;
-        margin: 0;
-        font-weight: normal;
+      font-size: 14px;
+      margin: 0;
+      font-weight: normal;
     }
-    
+
     .event-schedule-area-two .section-title .title-text h2 {
-        margin: 0px 0 15px;
+      margin: 0px 0 15px;
     }
-    
+
     .event-schedule-area-two ul.custom-tab {
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        border-bottom: 1px solid #dee2e6;
-        margin-bottom: 30px;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      border-bottom: 1px solid #dee2e6;
+      margin-bottom: 30px;
     }
+
     .event-schedule-area-two ul.custom-tab li {
-        margin-right: 70px;
-        position: relative;
+      margin-right: 70px;
+      position: relative;
     }
+
     .event-schedule-area-two ul.custom-tab li a {
-        color: #252525;
-        font-size: 25px;
-        line-height: 25px;
-        font-weight: 600;
-        text-transform: capitalize;
-        padding: 35px 0;
-        position: relative;
+      color: #252525;
+      font-size: 25px;
+      line-height: 25px;
+      font-weight: 600;
+      text-transform: capitalize;
+      padding: 35px 0;
+      position: relative;
     }
+
     .event-schedule-area-two ul.custom-tab li a:hover:before {
-        width: 100%;
+      width: 100%;
     }
+
     .event-schedule-area-two ul.custom-tab li a:before {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        content: "";
-        background: #4125dd;
-        width: 0;
-        height: 2px;
-        -webkit-transition: all 0.4s;
-        -o-transition: all 0.4s;
-        transition: all 0.4s;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      content: "";
+      background: #4125dd;
+      width: 0;
+      height: 2px;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s;
     }
+
     .event-schedule-area-two ul.custom-tab li a.active {
-        color: #4125dd;
+      color: #4125dd;
     }
-    
+
     .event-schedule-area-two .primary-btn {
-        margin-top: 40px;
+      margin-top: 40px;
     }
-    
+
     .event-schedule-area-two .tab-content .table {
-        -webkit-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
-        box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
-        margin-bottom: 0;
+      -webkit-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+      margin-bottom: 0;
     }
+
     .event-schedule-area-two .tab-content .table thead {
-        background-color: #007bff;
-        color: #fff;
-        font-size: 20px;
+      background-color: #007bff;
+      color: #fff;
+      font-size: 20px;
     }
+
     .event-schedule-area-two .tab-content .table thead tr th {
-        padding: 20px;
-        border: 0;
+      padding: 20px;
+      border: 0;
     }
+
     .event-schedule-area-two .tab-content .table tbody {
-        background: #fff;
+      background: #fff;
     }
+
     .event-schedule-area-two .tab-content .table tbody tr.inner-box {
-        border-bottom: 1px solid #dee2e6;
+      border-bottom: 1px solid #dee2e6;
     }
+
     .event-schedule-area-two .tab-content .table tbody tr th {
-        border: 0;
-        padding: 30px 20px;
-        vertical-align: middle;
+      border: 0;
+      padding: 30px 20px;
+      vertical-align: middle;
     }
+
     .event-schedule-area-two .tab-content .table tbody tr th .event-date {
-        color: #252525;
-        text-align: center;
+      color: #252525;
+      text-align: center;
     }
+
     .event-schedule-area-two .tab-content .table tbody tr th .event-date span {
-        font-size: 50px;
-        line-height: 50px;
-        font-weight: normal;
+      font-size: 50px;
+      line-height: 50px;
+      font-weight: normal;
     }
+
     .event-schedule-area-two .tab-content .table tbody tr td {
-        padding: 30px 20px;
-        vertical-align: middle;
+      padding: 30px 20px;
+      vertical-align: middle;
     }
+
     .event-schedule-area-two .tab-content .table tbody tr td .r-no span {
-        color: #252525;
+      color: #252525;
     }
+
     .event-schedule-area-two .tab-content .table tbody tr td .event-wrap h3 a {
-        font-size: 20px;
-        line-height: 20px;
-        color: #cf057c;
-        -webkit-transition: all 0.4s;
-        -o-transition: all 0.4s;
-        transition: all 0.4s;
+      font-size: 20px;
+      line-height: 20px;
+      color: #cf057c;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s;
     }
+
     .event-schedule-area-two .tab-content .table tbody tr td .event-wrap h3 a:hover {
-        color: #4125dd;
+      color: #4125dd;
     }
+
     .event-schedule-area-two .tab-content .table tbody tr td .event-wrap .categories {
-        display: -webkit-inline-box;
-        display: -ms-inline-flexbox;
-        display: inline-flex;
-        margin: 10px 0;
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      margin: 10px 0;
     }
+
     .event-schedule-area-two .tab-content .table tbody tr td .event-wrap .categories a {
-        color: #252525;
-        font-size: 16px;
-        margin-left: 10px;
-        -webkit-transition: all 0.4s;
-        -o-transition: all 0.4s;
-        transition: all 0.4s;
+      color: #252525;
+      font-size: 16px;
+      margin-left: 10px;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s;
     }
+
     .event-schedule-area-two .tab-content .table tbody tr td .event-wrap .categories a:before {
-        content: "\f07b";
-        font-family: fontawesome;
-        padding-right: 5px;
+      content: "\f07b";
+      font-family: fontawesome;
+      padding-right: 5px;
     }
+
     .event-schedule-area-two .tab-content .table tbody tr td .event-wrap .time span {
-        color: #252525;
+      color: #252525;
     }
+
     .event-schedule-area-two .tab-content .table tbody tr td .event-wrap .organizers {
-        display: -webkit-inline-box;
-        display: -ms-inline-flexbox;
-        display: inline-flex;
-        margin: 10px 0;
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      margin: 10px 0;
     }
+
     .event-schedule-area-two .tab-content .table tbody tr td .event-wrap .organizers a {
-        color: #4125dd;
-        font-size: 16px;
-        -webkit-transition: all 0.4s;
-        -o-transition: all 0.4s;
-        transition: all 0.4s;
+      color: #4125dd;
+      font-size: 16px;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s;
     }
+
     .event-schedule-area-two .tab-content .table tbody tr td .event-wrap .organizers a:hover {
-        color: #4125dd;
+      color: #4125dd;
     }
+
     .event-schedule-area-two .tab-content .table tbody tr td .event-wrap .organizers a:before {
-        content: "\f007";
-        font-family: fontawesome;
-        padding-right: 5px;
+      content: "\f007";
+      font-family: fontawesome;
+      padding-right: 5px;
     }
+
     .event-schedule-area-two .tab-content .table tbody tr td .primary-btn {
-        margin-top: 0;
-        text-align: center;
-        top: 90%;
+      margin-top: 0;
+      text-align: center;
+      top: 90%;
     }
+
     .event-schedule-area-two .tab-content .table tbody tr td .event-img img {
-        width: 100px;
-        height: 100px;
-        border-radius: 8px;
+      width: 100px;
+      height: 100px;
+      border-radius: 8px;
     }
-    
-    </style>  
+  </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top d-flex align-items-center" >
+  <header id="header" class="header fixed-top d-flex align-items-center">
 
-    <div class="d-flex align-items-center justify-content-between" >
+    <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt="">
         <span class="d-none d-lg-block">MovieFlixAdmin</span>
@@ -308,9 +341,9 @@
   </header><!-- End Header -->
 
   <!-- ======= Sidebar ======= -->
-  
 
-  <main id="main" class="main" > 
+
+  <main id="main" class="main">
 
     <!-- End Page Title -->
 
@@ -319,13 +352,13 @@
 
         <!-- Left side columns -->
         <div class="col-lg-12">
-          <div class="row" >
+          <div class="row">
 
             <!-- Sales Card -->
             <div class="col-xxl-3 col-md-6" id="users-btn" onclick="displayUsers()" style="cursor: pointer;">
               <div class="card info-card sales-card" style="background-color: #404e67;" id="users-background">
 
-                <div class="filter" >
+                <div class="filter">
                   <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                   <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                     <li class="dropdown-header text-start">
@@ -347,7 +380,8 @@
                     </div>
                     <div class="ps-3">
                       <h6 id="countOfusers" class="users-text" style="color:white">0</h6>
-                      <span class="text-success small pt-1 fw-bold"></span> <span class="users-text text-muted small pt-2 ps-1">Users</span>
+                      <span class="text-success small pt-1 fw-bold"></span> <span
+                        class="users-text text-muted small pt-2 ps-1">Users</span>
 
                     </div>
                   </div>
@@ -380,7 +414,8 @@
                     </div>
                     <div class="ps-3">
                       <h6 id="countOfPlaces" class="movies-text">0</h6>
-                      <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">movies</span>
+                      <span class="text-success small pt-1 fw-bold"></span> <span
+                        class="text-muted small pt-2 ps-1">movies</span>
                     </div>
                   </div>
                 </div>
@@ -388,7 +423,7 @@
               </div>
             </div>
 
-            
+
 
             <div class="col-xxl-3 col-md-6" id="theatres-btn" onclick="displayTheatres()" style="cursor: pointer;">
               <div class="card info-card revenue-card" id="theatres-background">
@@ -415,7 +450,8 @@
                     </div>
                     <div class="ps-3">
                       <h6 id="countOfPlaces" class="theatres-text">0</h6>
-                      <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">Theatres</span>
+                      <span class="text-success small pt-1 fw-bold"></span> <span
+                        class="text-muted small pt-2 ps-1">Theatres</span>
                     </div>
                   </div>
                 </div>
@@ -450,7 +486,8 @@
                     </div>
                     <div class="ps-3">
                       <h6 id="countOfQuiries" class="enquiries-text">0</h6>
-                      <span class="text-danger small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">Enquiries</span>
+                      <span class="text-danger small pt-1 fw-bold"></span> <span
+                        class="text-muted small pt-2 ps-1">Enquiries</span>
 
                     </div>
                   </div>
@@ -460,237 +497,221 @@
 
             </div><!-- End Customers Card -->
 
-            
-           
+
+
 
             <!-- Recent Sales -->
             <div class="col-12">
-              <div class="card recent-sales overflow-auto" >
+              <div class="card recent-sales overflow-auto">
 
-                
+
                 <div class="card-body" style="display:visible;" id="usersData">
-
+                  <div style="text-align: center;font-weight:900;font-size:30px;">USERS DATA</div>
                   <table class="table table-borderless datatable" id="userdata">
-                    
-                      <tr style="background-color: rgb(205, 201, 201);">
-                        <th scope="col">Id </th>
+                    <thead style="background-color: rgb(205, 201, 201);">
+                        <!-- <th scope="col">Id </th> -->
+                        <th scope="col">Id</th>
                         <th scope="col">Name</th>
                         <th scope="col">Mobile</th>
                         <th scope="col">Email</th>
-                      </tr>
-                    
+                    </thead>
+                    <tbody>
+                      
+                    </tbody>
+
                   </table>
-
+                  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+                  <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+                  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
+                  
                 </div>
 
-                
 
-                <div class="card-body">
 
-                  <table class="table table-borderless datatable" id="enquiries"  style="display:none">
-                    
-                      <tr style="background-color: rgb(205, 201, 201);">
-                        <th scope="col">Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Subject</th>
-                        <th scope="col">Message</th>
-                      </tr>
-                    
-                    
+                <div class="card-body" id="enquiries" style="display:none">
+                  <div style="text-align: center;font-weight:900;font-size:30px;">ENQUIRIES</div>
+                  <table class="table table-borderless datatable" id="enq" >
+
+                    <thead style="background-color: rgb(205, 201, 201);">
+                      <th scope="col">Name</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Subject</th>
+                      <th scope="col">Message</th>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+
                   </table>
-
-                </div>
-
-
-                <div class="card-body">
-
-                  <div class="table table-borderless datatable" id="addMoviesData"  style="display:none">
-                      <div class="col-lg-6 form-group" >
-                        <input name="name" placeholder="Enter movie name"   class="common-input mb-20 form-control" required="" type="text" id="movie_name">
-                        <input name="name" placeholder="Enter Category"   class="common-input mb-20 form-control" required="" type="text" id="category">
-                        <input name="name" placeholder="Enter format"   class="common-input mb-20 form-control" required="" type="text" id="format">
-                        <input name="name" placeholder="Enter duration"   class="common-input mb-20 form-control" required="" type="text" id="duration">
-                        <input name="name" placeholder="Enter Language"   class="common-input mb-20 form-control" required="" type="text" id="language">
-                        <input name="name" placeholder="Upload movie image"   class="common-input mb-20 form-control" required="" type="text" id="movie_image">
-                        <input name="name" placeholder="Upload cover image"   class="common-input mb-20 form-control" required="" type="text" id="cover_image"> 
-                        <input name="name" placeholder="Enter start date"   class="common-input mb-20 form-control" required="" type="date" id="startDate">                     
-                        <textarea class="common-textarea form-control" name="message" placeholder="Enter description"  required="" id="description"></textarea>	
-                        <button class="genric-btn primary" style="float: right;" id="submitTheatre">Submit!</button>			
-                    </div>  
-                    <div id="allMoviesData" class="">
-                        
-                    </div>
-                    </div>                 
-                  </div>
-
-                </div>
-
-                
-
-
-                
-
-                <div class="card-body" id="addTheatresData" style="display: none;">      
-
-
-              <div class="event-schedule-area-two bg-color pad100">
-                <div class="container">
-                <div class="row1">
-                <div class="col-lg-12">
-                <div class="section-title text-center">
-                <div class="title-text">
-                <h2>THEATRE REQUESTS</h2>
-                </div>
-               
-                </div>
-                </div>
-                
-                </div>
-                
-                <div class="row1">
-                <div class="col-lg-12">
-                <ul class="nav custom-tab" id="myTab" role="tablist">
-                <li class="nav-item">
-                <a class="nav-link active show" id="category_a" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Category A</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" id="category_b" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Category B</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" id="category_c" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Category C</a>
-                </li>
-                <li class="nav-item d-none d-lg-block">
-                <a class="nav-link" id="category_d" data-toggle="tab" href="#sunday" role="tab" aria-controls="sunday" aria-selected="false">Category D</a>
-                </li>
-                </ul>
-                
-                <div class="tab-content" id="myTabContent">
-                  <!--Category A-->
-                <div class="tab-pane fade active show" id="home" role="tabpanel">
-                <div class="table-responsive">
-                <table class="table">
-                <thead>
-                <tr style="background-color:lightgrey">
-                <th class="text-center" scope="col" >Id</th>
-                <th scope="col">Theatre</th>
-                <th scope="col">Theatre Name</th>
-                <th scope="col">Location</th>
-                <th class="text-center" scope="col">Action</th>
-                </tr>
-                </thead>
-                <tbody id="a">
-                
                   
 
-                
-            
-                </tbody>
-                </table>
-                </div>
-                </div>
-
-                <!--Category A end-->
-
-
-                <!--category B-->
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                <div class="table-responsive">
-                <table class="table">
-                <thead>
-                <tr style="background-color:lightgrey">
-                <th scope="col">Id</th>
-                <th scope="col">Theatre</th>
-                <th scope="col">Theatre Name</th>
-                <th scope="col">Location</th>
-                <th scope="col">Action</th>
-                </tr>
-                </thead>
-                <tbody id="b">
-                
-                </tbody>
-                </table>
-                </div>
-                </div>
-
-                <!--Category B end-->
-
-                <!--Category C-->
-                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                <div class="table-responsive">
-                <table class="table">
-                <thead>
-                <tr style="background-color:lightgrey">
-                <th scope="col">Id</th>
-                <th scope="col">Theatre</th>
-                <th scope="col">Theatre Name</th>
-                <th scope="col">Location</th>
-                <th scope="col">Action</th>
-                </tr>
-                </thead>
-                <tbody id="c">
-
-                </tbody>
-                </table>
-                </div>
                 </div>
 
 
-                <!--Category c end-->
+                <div class="card-body">
+
+                  <div class="table table-borderless datatable" id="addMoviesData" style="display:none">
+                    <div class="col-lg-6 form-group">
+                      <input name="name" placeholder="Enter movie name" class="common-input mb-20 form-control"
+                        required="" type="text" id="movie_name">
+                      <input name="name" placeholder="Enter Category" class="common-input mb-20 form-control"
+                        required="" type="text" id="category">
+                      <input name="name" placeholder="Enter format" class="common-input mb-20 form-control" required=""
+                        type="text" id="format">
+                      <input name="name" placeholder="Enter duration" class="common-input mb-20 form-control"
+                        required="" type="text" id="duration">
+                      <input name="name" placeholder="Enter Language" class="common-input mb-20 form-control"
+                        required="" type="text" id="language">
+                      <input name="name" placeholder="Upload movie image" class="common-input mb-20 form-control"
+                        required="" type="file" id="movie_image"accept="image/*">
+                      <input name="name" placeholder="Upload cover image" class="common-input mb-20 form-control"
+                        required="" type="file" id="cover_image" accept="image/*">
+                      <input name="name" placeholder="Enter start date" class="common-input mb-20 form-control"
+                        required="" type="date" id="startDate">
+                      <textarea class="common-textarea form-control" name="message" placeholder="Enter description"
+                        required="" id="description"></textarea>
+                      <button class="genric-btn primary" style="float: right;" id="submitMovie">Submit!</button>
+                    </div>
+                    <div id="allMoviesData" class="">
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
 
 
-                <!--Category D-->
-                <div class="tab-pane fade" id="sunday" role="tabpanel" aria-labelledby="sunday-tab">
-                <div class="table-responsive">
-                <table class="table">
-                <thead>
-                <tr style="background-color:lightgrey">
-                <th scope="col">Id</th>
-                <th scope="col">Theatre</th>
-                <th scope="col">Theatre Name</th>
-                <th scope="col">Location</th>
-                <th scope="col">Action</th>
-                </tr>
-                </thead>
-                <tbody id="d">
-                
-                
-                </tbody>
-                </table>
-                </div>
-                </div>
 
-                <!--Category D end-->
-                
-                </div>
-                
-                </div>
-                
-                </div>
-                
-                </div>
-                </div>
-                <section>
 
-                
-                  <table id="theatreList" class="display" style="width:100%">
-                      <thead>
-                          <tr>
-                              <th>Id</th>
-                              <th>Email</th>
-                              <th>Name</th>
-                              <th>Location</th>
-                              <th>Category</th>
-                              <th>Action</th>
-                          </tr>
-                      </thead>
-                      <tbody id="theatretablebody">
-                        
-                      </tbody>
-                      
-                  </table>
-                </section> 
+
+
+              <div class="card-body" id="addTheatresData" style="display: none;color: white;background-color: black;">
+
+
+                <div class="event-schedule-area-two bg-color pad100"
+                  style="background-color: black;padding: 20px;box-shadow:2px 2px 8px 2px grey;">
+                  <div class="container">
+                    <div class="row1">
+                      <div class="col-lg-12">
+                        <div class="section-title text-center">
+                          <div class="title-text">
+                            <h1 style="font-weight: 800;">THEATRE REQUESTS</h1>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row1">
+                      <div class="col-lg-12">
+                        <ul class="nav custom-tab" id="myTab" role="tablist">
+                          <li class="nav-item">
+                            <a class="nav-link active show" id="category_a" data-toggle="tab" href="#home" role="tab"
+                              aria-controls="home" aria-selected="true" style="color: white;">Category A</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" id="category_b" data-toggle="tab" href="#profile" role="tab"
+                              aria-controls="profile" aria-selected="false" style="color: white;">Category B</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" id="category_c" data-toggle="tab" href="#contact" role="tab"
+                              aria-controls="contact" aria-selected="false" style="color: white;">Category C</a>
+                          </li>
+                          <li class="nav-item d-none d-lg-block">
+                            <a class="nav-link" id="category_d" data-toggle="tab" href="#sunday" role="tab"
+                              aria-controls="sunday" aria-selected="false" style="color: white;">Category D</a>
+                          </li>
+                        </ul>
+
+                        <div class="tab-content" id="myTabContent">
+                          <!--Category A-->
+                          <div class="tab-pane fade active show" id="home" role="tabpanel">
+                            <div class="table-responsive">
+                              <div id="a">
+
+                              </div>
+
+                            </div>
+                          </div>
+
+                          <!--Category A end-->
+
+
+                          <!--category B-->
+                          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="table-responsive">
+
+                              <div id="b">
+
+                              </div>
+
+                            </div>
+                          </div>
+
+                          <!--Category B end-->
+
+                          <!--Category C-->
+                          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                            <div class="table-responsive">
+                              <div id="c">
+
+                              </div>
+
+                            </div>
+                          </div>
+
+
+                          <!--Category c end-->
+
+
+                          <!--Category D-->
+                          <div class="tab-pane fade" id="sunday" role="tabpanel" aria-labelledby="sunday-tab">
+                            <div class="table-responsive">
+                              <div id="d">
+
+
+                              </div>
+
+                            </div>
+                          </div>
+
+                          <!--Category D end-->
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+                <section style="background-color:black;padding: 20px;box-shadow: 2px 2px 8px 2px grey;margin-top:50px;">
+                  <h1 style="text-align: center;font-weight:800">ACCEPTED THEATRES</h1>
+                  <div id="theatreList" style="width:100%">
+                    <!-- <tr  class="card" style="background-color: black;box-shadow: 2px 2px 8px 2px grey;padding: 10px;">
+                            <td>Id</td>
+                            <td>Email</td>
+                            <td>Name</td>
+                            <td>Location</td>
+                            <td>Category</td>
+                            <td>Action</td>
+                      </tr> -->
+                    <div id="theatretablebody">
+                      <div class="card row"
+                        style="display:flex;flex-direction:row;justify-content:space-evenly;align-items:center;background-color: black;box-shadow: 1px 0px 3px 1px grey;padding: 10px;">
+                        <div class="col-lg-2" style="text-align: center;" style="margin:0px;padding:0px;">ID</div>
+                        <div class="col-lg-2" style="text-align: center;">EMAIL</div>
+                        <div class="col-lg-2" style="text-align: center;">Name</div>
+                        <div class="col-lg-2" style="text-align: center;">LOCATION</div>
+                        <div class="col-lg-2" style="text-align: center;">CATEGORY</div>
+                        <div class="col-lg-2" style="text-align: center;">ACTION</div>
+                      </div>
+                    </div>
+
+                  </div>
+                </section>
               </div><!--Add theatres end-->
-              
+
             </div>
 
 
@@ -701,7 +722,7 @@
 
       </div>
     </section>
-   
+
 
 
   </main>
@@ -710,9 +731,9 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <div class="pagetitle">
-        <h1  style="color: black;">Dashboard</h1>
+        <h1 style="color: black;">Dashboard</h1>
         <nav>
-          <ol class="breadcrumb"  style="color: black;">
+          <ol class="breadcrumb" style="color: black;">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
             <li class="breadcrumb-item active">Dashboard</li>
           </ol>
@@ -722,7 +743,7 @@
       <li class="nav-item">
         <a class="nav-link " href="index.html" style="color: black;">
           <i class="bi bi-grid" style="color: black;"></i>
-          <span >Home</span>
+          <span>Home</span>
         </a>
       </li><!-- End Dashboard Nav -->
       <li class="nav-item" style="cursor: pointer;color: black;">
@@ -750,10 +771,10 @@
         </a>
       </li><!-- End Dashboard Nav -->
 
-      
+
     </ul>
 
-  </aside><!-- End Sidebar-->  
+  </aside><!-- End Sidebar-->
   
   <script src="assets/js/main.js"></script>
   <script src="myjs/admin.js"></script>

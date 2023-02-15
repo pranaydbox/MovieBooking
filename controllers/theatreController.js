@@ -2,21 +2,21 @@ var theatremodel=require("../models/theatreModel")
 var moviemodel=require("../models/movieModel")
 var usermodel=require('../models/userModel')
 
-function addtheatre(req,res){
+
+async function addtheatre(req,res){
+
     var theatre=new theatremodel.theatreModel({
         theatreId:req.body.theatreId,
         theatreName:req.body.theatreName,
         ownerEmail:req.body.ownerEmail,
         category:req.body.category,
-        theatreImage:req.body.theatreImage,
+        theatreImage:req.file.path,
         location:req.body.location,
         bookings:req.body.bookings,
         access:req.body.access,
-        movieObjects:req.body.movieObjects,
-        beverageObjects:req.body.beverageObjects
     })
-
-    theatre.save((err,data)=>{
+    
+    await theatre.save((err,data)=>{
         res.send("Theatre request sent to admin");
     })
 }

@@ -19,7 +19,7 @@ function addtop3theatres(obj)
             <div class="single-destination relative">
                 <div class="thumb relative">
                     <div class="overlay overlay-bg"></div>
-                    <img class="img-fluid" src="img/myimgs/${obj[x].theatreImage}" alt="">
+                    <img class="img-fluid" src="../${obj[x].theatreImage}" alt="">
                 </div>
                 <div class="desc">	
                     <a href="#" class="price-btn">$150</a>			
@@ -40,7 +40,7 @@ function addtop6movies(obj)
             <div class="single-destination relative">
                 <div class="thumb relative">
                     <div class="overlay overlay-bg"></div>
-                    <img class="img-fluid" src="img/myimgs/${obj[x].coverImage}" alt="">
+                    <img class="img-fluid" src="../${obj[x].coverImage}" alt="">
                 </div>
                 <div class="desc">	
                     <a href="#" class="price-btn">Book now</a>			

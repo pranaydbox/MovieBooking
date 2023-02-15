@@ -7,7 +7,7 @@ window.onload=()=>{
             var ele=document.createElement("li");
             ele.className="list-group-item pt-0";
             ele.id=obj.movieId;
-            ele.innerHTML="<div class='d-flex align-items-center'><div class='flex-shrink-0 me-3'><img src='./img/myimgs/"+obj.movieImg+"'"+" alt='' class='avatar rounded-circle' /></div><div class='flex-grow-1'><h6 class='mb-0' id='existingMovieName'>"+obj.movieName+"</h6></div><div class='flex-shrink-0 text-end'><span><div ><a class='btn btn-primary' style='background-color: red;' href='#' onclick=deletemoviefromtheatre("+obj.movieId+")>Remove</a></div></span></div></div>  "    
+            ele.innerHTML="<div class='d-flex align-items-center'><div class='flex-shrink-0 me-3'><img src='../"+obj.movieImg+"'"+" alt='' class='avatar rounded-circle' /></div><div class='flex-grow-1'><h6 class='mb-0' id='existingMovieName'>"+obj.movieName+"</h6></div><div class='flex-shrink-0 text-end'><span><div ><a class='btn btn-primary' style='background-color: red;' href='#' onclick=deletemoviefromtheatre("+obj.movieId+")>Remove</a></div></span></div></div>  "    
             $("#nowshowingcontainer").append(ele);
         }
     })
@@ -19,7 +19,7 @@ window.onload=()=>{
             var ele=document.createElement("li");
             ele.className="list-group-item pt-0";
             ele.id=obj.movieId;
-            ele.innerHTML="<div class='d-flex align-items-center'><div class='flex-shrink-0 me-3'><img src='./img/myimgs/"+obj.cardImage+"'"+" alt='' class='avatar rounded-circle' /></div><div class='flex-grow-1'><h6 class='mb-0' id='existingMovieName'>"+obj.name+"</h6></div><div class='flex-shrink-0 text-end'><span><div ><a class='btn btn-primary' style='background-color: green;' href='#' onclick=addexistingmovie("+obj.movieId+")>+Add Movie</a></div></span></div></div>  "    
+            ele.innerHTML="<div class='d-flex align-items-center'><div class='flex-shrink-0 me-3'><img src='../"+obj.cardImage+"'"+" alt='' class='avatar rounded-circle' /></div><div class='flex-grow-1'><h6 class='mb-0' id='existingMovieName'>"+obj.name+"</h6></div><div class='flex-shrink-0 text-end'><span><div ><a class='btn btn-primary' style='background-color: green;' href='#' onclick=addexistingmovie("+obj.movieId+")>+Add Movie</a></div></span></div></div>  "    
             $("#existingMovieContainer").append(ele);
         }
     })

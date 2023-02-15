@@ -9,7 +9,7 @@ async function addreview(req,res){
         email:req.body.email,
         rating:req.body.rating,
         review:req.body.review,
-        date:req.body.date
+        date:new Date()
     }
     console.log(obj);
     await reviewmodel.reviewModel.updateOne({movieId:req.body.movieId},{$push:{reviews:obj}});

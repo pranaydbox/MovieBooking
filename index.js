@@ -7,6 +7,12 @@ app.use(express.urlencoded())
 var cors=require('cors')
 app.use(cors())
 
+// var multer=require('multer')
+// var upload=multer()
+// app.use(upload.array()); 
+
+// app.use(express.static('./public'));
+// app.use('/uploads', express.static('uploads'));
 
 
 var usersRouter=require("./routes/usersRoute");

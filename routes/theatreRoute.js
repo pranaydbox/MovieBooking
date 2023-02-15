@@ -1,8 +1,9 @@
 var theatreRoute=require("express").Router()
+var upload=require('../multerOperations/multer').upload
 var theatreController=require("../controllers/theatreController")
 
 
-theatreRoute.post("/addtheatre",theatreController.addtheatre)
+theatreRoute.post("/addtheatre",upload.single('theatreImage'),theatreController.addtheatre)
 theatreRoute.post("/accepttheatre",theatreController.accepttheatre)
 theatreRoute.get("/gettheatre/:category",theatreController.gettheatre)
 theatreRoute.post("/getacceptedtheatres",theatreController.getacceptedtheatres);

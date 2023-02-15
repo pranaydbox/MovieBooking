@@ -12,7 +12,7 @@ window.onload=function(){
                 `<div class="col-lg-4" style="color:black">
                 <div class="single-destinations" >
                     <div class="thumb">
-                        <img src="img/myimgs/${obj.theatreImage}" alt="">
+                        <img src="../${obj.theatreImage}" alt="">
                     </div>
                     <div class="details">
                         <h4 class="d-flex justify-content-between" style="color:black">
