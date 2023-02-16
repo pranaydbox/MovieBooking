@@ -12,6 +12,9 @@ theatreRoute.get("/gettheatres",theatreController.gettheatres)
 theatreRoute.get("/gettopthreetheatres",theatreController.gettopthreetheatres)
 theatreRoute.post("/rejecttheatre",theatreController.rejecttheatre)
 theatreRoute.post("/getacceptedtheatres",theatreController.getacceptedtheatres);
+theatreRoute.get("/getsingletheatre/:theatreId",theatreController.getsingletheatre)
+
+
 
 
 module.exports=theatreRoute;

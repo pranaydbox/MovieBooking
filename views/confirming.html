@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+	<html lang="zxx" class="no-js">
+	<head>
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="img/fav.png">
+		<!-- Author Meta -->
+		<meta name="author" content="colorlib">
+		<!-- Meta Description -->
+		<meta name="description" content="">
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title>MovieFlix</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+			<!--
+			CSS
+			============================================= -->
+			<link rel="stylesheet" href="css/linearicons.css">
+			<link rel="stylesheet" href="css/font-awesome.min.css">
+			<link rel="stylesheet" href="css/bootstrap.css">
+			<link rel="stylesheet" href="css/magnific-popup.css">
+			<link rel="stylesheet" href="css/jquery-ui.css">				
+			<link rel="stylesheet" href="css/nice-select.css">							
+			<link rel="stylesheet" href="css/animate.min.css">
+			<link rel="stylesheet" href="css/owl.carousel.css">				
+			<link rel="stylesheet" href="css/main.css">
+            <style>
+                @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+                @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
+
+                body {
+                    font-family: "Montserrat", sans-serif;
+                    min-height: 100vh;
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    background-color: #000000;
+                    color: teal;
+                    margin: 0;
+                    /* padding: 0; */
+                }
+                p{
+                    padding: 0px;
+                    margin: 0px;
+                }
+
+                * {
+                    font-family: "Montserrat", sans-serif !important;
+                    box-sizing: border-box;
+                }
+                #confirm{
+                    /* border: 2px solid red; */
+                    /* display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column; */
+                    background-color: white;
+                    color: teal;
+                    /* margin: auto; */
+                    /* margin-top: 100px; */
+                    /* margin-bottom: 100px; */
+                    width: 40%;
+                    box-shadow:2px 2px 10px 10px rgb(122, 122, 122);
+                    
+                }
+                tr{
+                    margin: 200px;
+                }
+
+                /* a{
+                    background-color: red;
+                    font-size: 20px;
+                    padding: 10px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    text-decoration: none;
+                    color: white
+                } */
+
+
+            </style>
+		</head>
+		<body>	
+
+            <h3 style="text-decoration:underline 1px;font-weight: bold;font-size: 40px;text-align: center;margin: 20px;">Confirm Your Booking</h3>
+            <div id="confirm" >
+                
+                <div style="background-color: rgb(2, 2, 2);">
+                    <h2 style="text-align: center;margin: 0px;font-weight: bold;font-size: 30px;padding: 15px;">Booking Details</h2>
+                </div>
+                <div style="margin: auto; width: 70%;display: flex; justify-content: center;align-items: center;font-size: 20px;font-weight: bold;">
+                    <div>
+                        <table id="tablebody">
+
+                        </table>
+                    </div>
+                </div>    
+
+           </div>
+            
+            
+
+            <!-- <h3 style="text-decoration:underline 1px;font-weight: bold;font-size: 40px;text-align: center;margin: 20px;">Confirm Your Booking</h3> -->
+            
+            <div onclick="booked()" style="width:100%;display: flex;justify-content: center;align-items: center;padding: 15px;position: absolute;bottom: 0;"><div style="background-color: rgb(255, 255, 255);color: rgb(0, 0, 0);padding: 10px;border-radius: 20px;font-size:17px;cursor: pointer;"><a id="confirmseats" href="#" style="color: black;">Confirm Seats</a></div></div>
+            <script>
+				
+                    var email=localStorage.getItem("currentLoginUser");
+					var owneremail=localStorage.getItem(email);
+					if(email!=null && email!=1){
+						$("#regButton").css("display","none");
+						$("#profileButtonMain").css("display","block");
+					}
+					else{
+						$("#regButton").css("display","block");
+						$("#profileButtonMain").css("display","none");
+					}
+					if(email=="admin@gmail.com"){
+						$("#adminButton").css("display","block");
+					}
+					else{
+						$("#adminButton").css("display","none");
+					}
+					if(owneremail==null){
+						$("#theatreButton").css("display","none");
+					}
+					else{
+						$("#theatreButton").css("display","block");
+					}
+            
+        </script>
+
+        <script src="js/vendor/jquery-2.2.4.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>			
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>		
+        <script src="js/jquery-ui.js"></script>					
+        <script src="js/easing.min.js"></script>			
+        <script src="js/hoverIntent.js"></script>
+        <script src="js/superfish.min.js"></script>	
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>						
+        <script src="js/jquery.nice-select.min.js"></script>					
+        <script src="js/owl.carousel.min.js"></script>							
+        <script src="js/mail-script.js"></script>	
+        <script src="js/main.js"></script>	
+        <script src="myjs/common.js"></script>
+        <script src="myjs/booking.js"></script>
+        <script src="myjs/confirming.js"></script>
+        </body>
+        </html>
+
+
+

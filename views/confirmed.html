@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+	<html lang="zxx" class="no-js">
+	<head>
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="img/fav.png">
+		<!-- Author Meta -->
+		<meta name="author" content="colorlib">
+		<!-- Meta Description -->
+		<meta name="description" content="">
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title>MovieFlix</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+			<!--
+			CSS
+			============================================= -->
+			<link rel="stylesheet" href="css/linearicons.css">
+			<link rel="stylesheet" href="css/font-awesome.min.css">
+			<link rel="stylesheet" href="css/bootstrap.css">
+			<link rel="stylesheet" href="css/magnific-popup.css">
+			<link rel="stylesheet" href="css/jquery-ui.css">				
+			<link rel="stylesheet" href="css/nice-select.css">							
+			<link rel="stylesheet" href="css/animate.min.css">
+			<link rel="stylesheet" href="css/owl.carousel.css">				
+			<link rel="stylesheet" href="css/main.css">
+            <style>
+                @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+                @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
+
+                body {
+                    font-family: "Montserrat", sans-serif;
+                    min-height: 100vh;
+                    
+                    flex-direction: column;
+                    background-color: #000000;
+                    color: teal;
+                    margin: 0;
+                    /* padding: 0; */
+                }
+                p{
+                    padding: 0px;
+                    margin: 0px;
+                }
+
+                * {
+                    font-family: "Montserrat", sans-serif !important;
+                    box-sizing: border-box;
+                }
+                #ticket{
+                    /* border: 2px solid red; */
+                    /* display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column; */
+                    background-color: white;
+                    color: teal;
+                    margin: auto;
+                    margin-top: 30px;
+                    margin-bottom: 30px;
+                    width: 80%;
+                    box-shadow:2px 2px 10px 10px rgb(122, 122, 122);
+                    
+                }
+
+                a{
+                    background-color: red;
+                    font-size: 20px;
+                    padding: 10px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    text-decoration: none;
+                    color: white
+                }
+
+            </style>
+		</head>
+		<body>	
+			<!-- <header id="header">
+				
+				<div class="container-fluid main-menu">
+					<div class="row align-items-center justify-content-between d-flex">
+				      <div id="logo">
+				        <a href="index.html" style="color: white;text-decoration: none;font-size: 30px;font-weight: bold;">MovieFlix</a>
+				      </div>
+				      <nav id="nav-menu-container">
+				        <ul class="nav-menu">
+				          <li><a href="index.html">Home</a></li>
+				          <li><a href="movies.html">Movies</a></li>
+				          <li><a href="theatres.html">Theatres</a></li>
+				          <li><a href="contact.html">Contact</a></li>
+				          <li><a href="about.html">About</a></li>
+				          <li id="regButton"><a href="register.html">Register</a></li>
+				          <li id="adminButton"><a href="admin.html">Admin</a></li>
+				          <li class="menu-has-children" id="profileButtonMain"><a href="">Hello user!</a>
+				            <ul>
+				              <li><a href="profile.html">Profile</a></li>
+				              <li><a href="" id="lgout">Log Out</a></li>
+				            </ul>
+				          </li>	
+				        </ul>
+				      </nav					      		  
+					</div>
+				</div>
+            </header>#header -->
+            
+            <h3 style="text-decoration:underline 1px;font-weight: bold;font-size: 40px;text-align: center;margin: 20px;">Your Ticket Booked Succesfully!</h3>
+           
+            <div id="ticket" >
+                
+
+                
+                
+            </div>
+            <div style="display: flex;flex-direction: row;justify-content: center;align-items: center;">
+                <div><a href="index.html" style="text-decoration: none; color: white;">Home</a>&nbsp &nbsp <a style="color:white" onclick="generatePDF()">Download Ticket</a></div>
+            </div>
+            <script>
+				
+                async function generatePDF(){
+
+                    const element=document.getElementById("ticket");
+                    var opt = {
+                    margin:       1,
+                    filename:     'ticket.pdf',
+                    image:        { type: 'jpeg', quality: 0.98 },
+                    html2canvas:  { scale: 2 },
+                    jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' },
+                    // data:"hello world jfldjlfaalj"
+                    };
+
+                    // New Promise-based usage:
+                    // await html2pdf().set(opt).from(element).save();
+
+                    // Old monolithic-style usage:
+                    await html2pdf(element, opt);
+
+                }
+                    // var email=localStorage.getItem("currentLoginUser");
+					// var owneremail=localStorage.getItem(email);
+					// if(email!=null && email!=1){
+					// 	$("#regButton").css("display","none");
+					// 	$("#profileButtonMain").css("display","block");
+					// }
+					// else{
+					// 	$("#regButton").css("display","block");
+					// 	$("#profileButtonMain").css("display","none");
+					// }
+					// if(email=="admin@gmail.com"){
+					// 	$("#adminButton").css("display","block");
+					// }
+					// else{
+					// 	$("#adminButton").css("display","none");
+					// }
+					// if(owneremail==null){
+					// 	$("#theatreButton").css("display","none");
+					// }
+					// else{
+					// 	$("#theatreButton").css("display","block");
+					// }
+            
+        </script>
+
+        <script src="js/vendor/jquery-2.2.4.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>			
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>		
+        <script src="js/jquery-ui.js"></script>					
+        <script src="js/easing.min.js"></script>			
+        <script src="js/hoverIntent.js"></script>
+        <script src="js/superfish.min.js"></script>	
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>						
+        <script src="js/jquery.nice-select.min.js"></script>					
+        <script src="js/owl.carousel.min.js"></script>							
+        <script src="js/mail-script.js"></script>	
+        <script src="js/main.js"></script>	
+        <script src="myjs/common.js"></script>
+        <script src="myjs/booking.js"></script>
+        <script src="myjs/confirmed.js"></script>
+        </body>
+        </html>
+
+
+

@@ -109,7 +109,7 @@ function addAcceptedTheatrestoAdmin(obj) {
         $("#theatretablebody").append(
             `<div class="card row" style="display:flex;flex-direction:row;justify-content:space-evenly;align-items:center;background-color: black;box-shadow: 1px 0px 3px 1px grey;padding: 10px;">
                 <div  class="col-lg-2" style="text-align: center;"style="margin:0px;padding:0px;">${obj[x].theatreId}</div>
-                <div class="col-lg-2" style="text-align: center;">${obj[x].ownerEmail}L</div>
+                <div class="col-lg-2" style="text-align: center;">${obj[x].ownerEmail}</div>
                 <div class="col-lg-2" style="text-align: center;">${obj[x].theatreName}</div>
                 <div class="col-lg-2" style="text-align: center;">${obj[x].location}</div>
                 <div class="col-lg-2" style="text-align: center;">${obj[x].category}</div>
@@ -351,6 +351,7 @@ $(document).ready(() => {
         var languages = $("#language").val()
         var cardImage = document.getElementById("movie_image").files[0];
         var coverImage = document.getElementById("cover_image").files[0];
+        console.log(cardImage)
 
         var movieDetails = new FormData();
         movieDetails.append("movieId", localStorage.getItem("movieId")),

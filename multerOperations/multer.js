@@ -8,7 +8,7 @@ var storage=multer.diskStorage({
         cb(null,File.originalname)
     }
 })
-
+ 
 
 
 var  upload=multer({storage:storage});

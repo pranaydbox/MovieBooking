@@ -339,9 +339,156 @@
   
 
   <main id="main" class="main" > 
-
-    <!-- End Page Title -->
-<!--Add Movies div-->
+    <div class="row">
+        <section class="col-mg-12">
+            <div class="row">
+    
+                <!-- Sales Card -->
+                <div class="col-xxl-3 col-md-6" id="users-btn" onclick="displayUsers()" style="cursor: pointer;">
+                  <div class="card info-card sales-card" style="background-color: #404e67;" id="users-background">
+    
+                    <div class="filter">
+                      <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <li class="dropdown-header text-start">
+                          <h6>Filter</h6>
+                        </li>
+    
+                        <li><a class="dropdown-item" href="#">Today</a></li>
+                        <li><a class="dropdown-item" href="#">This Month</a></li>
+                        <li><a class="dropdown-item" href="#">This Year</a></li>
+                      </ul>
+                    </div>
+    
+                    <div class="card-body">
+                      <h5 class="card-title users-text" style="color: white;">Users List</h5>
+    
+                      <div class="d-flex align-items-center">
+                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                          <i class="bi bi-people"></i>
+                        </div>
+                        <div class="ps-3">
+                          <h6 id="countOfusers" class="users-text" style="color:white">0</h6>
+                          <span class="text-success small pt-1 fw-bold"></span> <span
+                            class="users-text text-muted small pt-2 ps-1">Users</span>
+    
+                        </div>
+                      </div>
+                    </div>
+    
+                  </div>
+                </div><!-- End Sales Card -->
+                <div class="col-xxl-3 col-md-6" id="movies-btn" onclick="displayMovies()" style="cursor: pointer;">
+                  <div class="card info-card revenue-card" id="movies-background">
+    
+                    <div class="filter">
+                      <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <li class="dropdown-header text-start">
+                          <h6>Filter</h6>
+                        </li>
+    
+                        <li><a class="dropdown-item" href="#">Today</a></li>
+                        <li><a class="dropdown-item" href="#">This Month</a></li>
+                        <li><a class="dropdown-item" href="#">This Year</a></li>
+                      </ul>
+                    </div>
+    
+                    <div class="card-body movies-text">
+                      <h5 class="card-title movies-text">Movies</h5>
+    
+                      <div class="d-flex align-items-center">
+                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                          <i class="bi bi-film"></i>
+                        </div>
+                        <div class="ps-3">
+                          <h6 id="countOfPlaces" class="movies-text">0</h6>
+                          <span class="text-success small pt-1 fw-bold"></span> <span
+                            class="text-muted small pt-2 ps-1">movies</span>
+                        </div>
+                      </div>
+                    </div>
+    
+                  </div>
+                </div>
+    
+    
+    
+                <div class="col-xxl-3 col-md-6" id="theatres-btn" onclick="displayTheatres()" style="cursor: pointer;">
+                  <div class="card info-card revenue-card" id="theatres-background">
+    
+                    <div class="filter">
+                      <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <li class="dropdown-header text-start">
+                          <h6>Filter</h6>
+                        </li>
+    
+                        <li><a class="dropdown-item" href="#">Today</a></li>
+                        <li><a class="dropdown-item" href="#">This Month</a></li>
+                        <li><a class="dropdown-item" href="#">This Year</a></li>
+                      </ul>
+                    </div>
+    
+                    <div class="card-body theatres-text">
+                      <h5 class="card-title theatres-text">Theatres</h5>
+    
+                      <div class="d-flex align-items-center">
+                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                          <i class="bi bi-film"></i>
+                        </div>
+                        <div class="ps-3">
+                          <h6 id="countOfPlaces" class="theatres-text">0</h6>
+                          <span class="text-success small pt-1 fw-bold"></span> <span
+                            class="text-muted small pt-2 ps-1">Theatres</span>
+                        </div>
+                      </div>
+                    </div>
+    
+                  </div>
+                </div><!-- End Revenue Card -->
+    
+                <!-- Customers Card -->
+                <div class="col-xxl-3  col-md-6" id="queries-btn" onclick="displayqueries()" style="cursor: pointer;">
+    
+                  <div class="card info-card customers-card" id="enquiries-background">
+    
+                    <div class="filter">
+                      <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <li class="dropdown-header text-start">
+                          <h6>Filter</h6>
+                        </li>
+    
+                        <li><a class="dropdown-item" href="#">Today</a></li>
+                        <li><a class="dropdown-item" href="#">This Month</a></li>
+                        <li><a class="dropdown-item" href="#">This Year</a></li>
+                      </ul>
+                    </div>
+    
+                    <div class="card-body enquiries-text">
+                      <h5 class="card-title enquiries-text">Enquiries</h5>
+    
+                      <div class="d-flex align-items-center">
+                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                          <i class="bi bi-question-circle"></i>
+                        </div>
+                        <div class="ps-3">
+                          <h6 id="countOfQuiries" class="enquiries-text">0</h6>
+                          <span class="text-danger small pt-1 fw-bold"></span> <span
+                            class="text-muted small pt-2 ps-1">Enquiries</span>
+    
+                        </div>
+                      </div>
+    
+                    </div>
+                  </div>
+    
+                </div>
+                </div>
+        </section>
+    </div>
+    
     <div class="card-body" id="addMoviesData">
 
         <div class="container">
@@ -360,8 +507,7 @@
                 </div>
             </div>
         </div>
-    <section >
-    </section>
+    
 
     </div>
 
@@ -385,7 +531,7 @@
                     </div>
                 </div>
             </div>
-        </div><!--Add theatres end-->
+        </div><!--Add theatres end--> 
     
   </main>
   <aside id="sidebar" class="sidebar" style="color: black;">
