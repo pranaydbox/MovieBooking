@@ -10,16 +10,15 @@ window.onload=function()
             $.post("http://localhost:3333/users/getprofile",{curremail:localStorage.getItem("currentLoginUser")},(xhr,status,responseText)=>{
                 var userdata=JSON.parse(responseText.responseText);
                 // alert(userdata)
-                getmovietheatredata(moviedata,theatredata,userdata,parseInt(arr[2]),parseInt(arr[3]),parseInt(arr[4]))
+                getmovietheatredata(moviedata,theatredata,userdata)
             })
             
         })
     })
 }
-function getmovietheatredata(moviedata,theatredata,userdata,price,count,total)
+function getmovietheatredata(moviedata,theatredata,userdata)
 {
-    // alert("hello")
-
+    var price = { "category D": 120, "category C": 150, "category B": 180, "category A": 200 }
     var arr=window.location.hash.substring(1).split(":");
     // var seat=localStorage.getItem("seatsarr").split(":")
     $("#ticket").append(
@@ -48,16 +47,16 @@ function getmovietheatredata(moviedata,theatredata,userdata,price,count,total)
                     <table>
                         <tr><td>Name : </td><td>${moviedata.name}</td></tr>
                         <tr><td>category : </td><td>${moviedata.category}</td></tr>
-                        <tr><td>Ticket price: </td><td>${price}</td></tr>
+                        <tr><td>Ticket price: </td><td>${price[theatredata.category]}</td></tr>
                         <tr><td>Language : </td><td>${moviedata.languages[0]}</td></tr>
                     </table>
                 </div>
                 <div>
                     <table>
                         <tr><td>Format : </td><td>${moviedata.format}</td></tr>
-                        <tr><td>No of seats : </td><td>${count}</td></tr>
+                        <tr><td>No of seats : </td><td>${localStorage.getItem("seatsarr").split(",").length}</td></tr>
                         <tr><td>Seats Booked : </td><td>${localStorage.getItem("seatsarr")}</td></tr>
-                        <tr><td>Price : </td><td>${total}</td></tr>
+                        <tr><td>Price : </td><td>${price[theatredata.category]*localStorage.getItem("seatsarr").split(",").length}</td></tr>
                     </table>
                 </div>
             </div>

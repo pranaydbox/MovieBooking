@@ -78,5 +78,5 @@ function addreviewstobottom(data) {
 
 
 function bookmoviefrommovies(theatreId, movieId,price) {
-    window.location.href = "booking.html#" + movieId + ":" + theatreId+":"+price;
+    window.location.href = "booking.html#" + movieId + ":" + theatreId;
 }

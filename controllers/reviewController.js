@@ -1,4 +1,3 @@
-const { isImportEqualsDeclaration } = require("typescript")
 var reviewmodel=require("../models/reviewModel")
 var moviemodel=require("../models/movieModel")
 

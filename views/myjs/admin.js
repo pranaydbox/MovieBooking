@@ -84,17 +84,30 @@ window.onload = () => {
 function addMoviesToAdmin(arr) {
     for (x in arr) {
         obj = arr[x];
-        var ele = document.createElement("div");
-        ele.className = "list-group-item pt-0";
-        ele.id = obj.movieId;
-        ele.innerHTML = `<div style="display: flex;flex-direction: column;border: 1px solid black;">
-            <img src="../${obj.cardImage}">
-            <div>${obj.name}</div>
-            <a href="reviews.html#${obj.movieId}"+>Reviews</a>
-            <div onclick="deletemovie('${obj.movieId}')">Remove Movie</div>
+        // var ele = document.createElement("div");
+        // ele.className = "list-group-item pt-0";
+        // ele.id = obj.movieId;
+        var ele = `<div id = ${obj.movieId} class="row" style="padding:20px;display:flex;justify-content:center;align-items:center;margin:10px;background-color:yellow">
+            <div class="col-lg-3"><img  src="../${obj.cardImage}" style="width:5rem;height:5rem;border-radius:50%"></div>
+            <div class="col-lg-3" style="font-size:18px;font-weight:500" >${obj.name}</div>
+            <div class="col-lg-3"><a style="padding:8px 20px;color:black;background-color:blue;border-radius:10px;"  href="reviews.html#${obj.movieId}"+>Reviews</a></div>
+            <div class="col-lg-3"<div style="padding:6px 10px;color:remove;background-color:red;border-radius:10px;width:9%;cursor:pointer;text-align:center" onclick="deletemovie('${obj.movieId}')">Remove</div></div>
         </div>`
         $("#allMoviesData").append(ele);
     }
+
+    // for (x in obj) {
+    //     $("#theatretablebody").append(
+    //         `<div class="card row" style="display:flex;flex-direction:row;justify-content:space-evenly;align-items:center;background-color: black;box-shadow: 1px 0px 3px 1px grey;padding: 10px;">
+    //             <div  class="col-lg-2" style="text-align: center;"style="margin:0px;padding:0px;">${obj[x].theatreId}</div>
+    //             <div class="col-lg-2" style="text-align: center;">${obj[x].ownerEmail}</div>
+    //             <div class="col-lg-2" style="text-align: center;">${obj[x].theatreName}</div>
+    //             <div class="col-lg-2" style="text-align: center;">${obj[x].location}</div>
+    //             <div class="col-lg-2" style="text-align: center;">${obj[x].category}</div>
+    //             <div class="btn col-lg-2" style="background-color:red;border-radius:10px;" onclick="removetheatrefromtheatresadmin('${obj[x].ownerEmail}')">Remove</div>
+    //       </div>`
+    //     )
+    // }
 }
 
 

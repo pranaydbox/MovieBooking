@@ -24,10 +24,37 @@ window.onload=()=>{
         }
     })
 
+    $.get("http://localhost:3333/movies/getmovies", (data, status) => {
+        addMoviesToAdmin(data);
+    })
+
 
 
 }
 
+function addMoviesToAdmin(arr) {
+    for(x in arr){
+        obj=arr[x];
+        var ele=document.createElement("li");
+        ele.className="list-group-item pt-0";
+        ele.id=obj.movieId;
+        ele.innerHTML="<div class='d-flex align-items-center'><div class='flex-shrink-0 me-3'><img src='../"+obj.cardImage+"'"+" alt='' class='avatar rounded-circle' /></div><div class='flex-grow-1'><h6 class='mb-0' id='existingMovieName'>"+obj.name+"</h6></div><div class='flex-shrink-0 text-end'><span><div ><a class='btn btn-primary'  href='reviews.html#"+obj.movieId+"'>See Reviews</a></div></span></div></div>  "    
+        $("#seereviewscontainer").append(ele);
+    }
+    // for (x in arr) {
+    //     obj = arr[x];
+    //     var ele = document.createElement("div");
+    //     ele.className = "list-group-item pt-0";
+    //     ele.id = obj.movieId;
+    //     ele.innerHTML = `<div style="display: flex;flex-direction: column;border: 1px solid black;">
+    //         <img src="../${obj.cardImage}">
+    //         <div>${obj.name}</div>
+    //         <a href="reviews.html#${obj.movieId}"+>Reviews</a>
+    //         <div onclick="deletemovie('${obj.movieId}')">Remove Movie</div>
+    //     </div>`
+    //     $("#seereviewscontainer").append(ele);
+    // }
+}
 
 
 
@@ -46,16 +73,21 @@ function deletemoviefromtheatre(movieId){
 
 
 function displayMovieStatus(){
-    $("#usersData").css("display","none")
     $("#addMoviesData").css("display","none")
     $("#movieStatus").css("display","block")
-    $("#enquiries").css("display","none")
+    $("#seereviews").css("display","none")
 }
 function addMovies(){
-    $("#usersData").css("display","none")
     $("#addMoviesData").css("display","block")
     $("#movieStatus").css("display","none")
-    $("#enquiries").css("display","none")
+    $("#seereviews").css("display","none")
+}
+
+
+function displayreviews(){
+    $("#addMoviesData").css("display","none")
+    $("#movieStatus").css("display","none")
+    $("#seereviews").css("display","block")
 }
 
 $(document).ready(function() {
