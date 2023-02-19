@@ -12,6 +12,7 @@ window.onload=function(){
 }
 function addtop3theatres(obj)
 {
+    var price = { "category D": 120, "category C": 150, "category B": 180, "category A": 200 }
     for(x in obj)
     {
         $("#top3theatres").append(
@@ -22,7 +23,7 @@ function addtop3theatres(obj)
                     <img class="img-fluid" src="../${obj[x].theatreImage}" alt="">
                 </div>
                 <div class="desc">	
-                    <a href="#" class="price-btn">$150</a>			
+                    <a href="theatres.html" class="price-btn">₹${price[obj[x].category]}</a>			
                     <h4>${obj[x].theatreName}</h4>
                     <p>${obj[x].location}</p>			
                 </div>
@@ -43,7 +44,7 @@ function addtop6movies(obj)
                     <img class="img-fluid" src="../${obj[x].coverImage}" alt="">
                 </div>
                 <div class="desc">	
-                    <a href="#" class="price-btn">Book now</a>			
+                    <a href="movies.html" class="price-btn">Book now</a>			
                     <h4>${obj[x].name}</h4>
                     <p>${obj[x].category}</p>			
                 </div>

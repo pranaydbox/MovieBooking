@@ -11,6 +11,6 @@ movieRoute.post("/removeownermovie",movieController.removeownermovie)
 movieRoute.get("/gettopsixmovies",movieController.gettopsixmovies)
 movieRoute.post("/getexistingmovies",movieController.getexistingmovies)
 movieRoute.post("/removemovie",movieController.removemovie)
-
-
+movieRoute.get("/getmoviesbylanguages",movieController.getmoviesbylanguages)
+movieRoute.get("/getmoviesbycategories",movieController.getmoviesbycategories)
 module.exports=movieRoute;

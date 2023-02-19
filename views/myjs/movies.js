@@ -11,26 +11,33 @@ window.onload=()=>{
 
 
 function addTop3MoviesCarousel(obj){
+    // alert(obj)
+    // console.log(obj[0].cardImage)
+    let str=""
     for(var i=0;i<2;i++){
-        $("#moviesTop3Carousel").append(
-            `<div class="single-carusel">
+        str=str+`<div class="single-carusel">
                 <div class="thumb relative">
                 <div class="overlay overlay-bg"></div>
-                    <img class="img-fluid" src="img/tempCover.jpg" alt="">
+                    <img class="img-fluid" src="../${obj[i].coverImage}" alt="">
                 </div>
                 <div class="price-detials">
                     <a href="#" class="price-btn">Starting From <span>$250</span></a>
                 </div>
                 <div class="details">
-                    <h4 class="text-white">Ancient Architecture</h4>
+                    <h4 class="text-white">hello</h4>
                     <p class="text-white">
                         Cairo, Egypt
                     </p>
                 </div>								
-			</div>`
-        )
+			</div>\n`
+        
     }
+    $("#moviesTop3Carousel").append(
+            str
+    )
+    $("#moviesTop3Carousel").carousel({slide : true, ride : true });
 }
+
 
 
 

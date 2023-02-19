@@ -15,6 +15,7 @@ window.onload = () => {
             $("#movieduration").html(Math.floor(data.duration / 60) + "h" + (data.duration % 60) + "m");
             $("#language").html(data.languages);
             $("#startDate").html(data.startDate.substring(0, 10));
+            $("#movierating").html(data.ratingavg*2)
             addtheatres(data.theatreObjects, "Hyderabad");
             addreviewstobottom(data.reviewObjects);
         })

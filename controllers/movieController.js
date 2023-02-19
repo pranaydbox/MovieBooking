@@ -57,7 +57,20 @@ function getownermovies(req,res){
         res.send(data.movieObjects);
     });
 }
+function getmoviesbylanguages(req,res)
+{
+    console.log(10000)
+    moviemodel.movieModel.find({theatreObjects:{$not:{$size:0}},languages: { $in: [ "Telugu" ] } },(err,data)=>{
+        res.send(data);
+    })
+}
 
+function getmoviesbycategories(req,res)
+{
+    moviemodel.movieModel.find({theatreObjects:{$not:{$size:0}},categories: { $in: [ "Thrill" ] } },(err,data)=>{
+        res.send(data);
+    })
+}
 
 function getmovies(req,res){
     moviemodel.movieModel.find({theatreObjects:{$not:{$size:0}}},(err,data)=>{
@@ -67,11 +80,14 @@ function getmovies(req,res){
 
 async function getmovie(req,res){
     var movieData=await moviemodel.movieModel.findOne({movieId:req.params.id});
-    var ratingavg=await moviemodel.movieModel.aggregate([{$unwind:"$reviewObjects"},{$group:{_id:"$movieId","avgrating":{$avg:"$reviewObjects.rating"}}}])
+    // var ratingavg=await moviemodel.movieModel.aggregate([{$unwind:"$reviewObjects"},{$group:{_id:"$movieId","avgrating":{$avg:"$reviewObjects.rating"}}}])
+    var ratingavg=await moviemodel.movieModel.aggregate([{$match:{movieId:req.params.id}},{$unwind:"$reviewObjects"},{$group:{_id:"$movieId",avgrating:{$avg:"$reviewObjects.rating"}}}])
     var obj=Object.assign({},movieData)
-    obj.ratingavg=ratingavg.avgrating;
-    console.log(ratingavg);
+    obj._doc.ratingavg=ratingavg[0].avgrating;
+    // console.log(ratingavg);
+    res.send(obj._doc);
 }
+
 
 async function removeownermovie(req,res){
     let data=await theatremodel.theatreModel.findOne({ownerEmail:req.body.curremail});
@@ -92,7 +108,9 @@ async function gettopsixmovies(req,res)
 
 async function getexistingmovies(req,res){
     let data=await theatremodel.theatreModel.findOne({ownerEmail:req.body.curremail});
+    // console.log(data)
     moviemodel.movieModel.find({theatreObjects:{$not:{$elemMatch:{theatreId:data.theatreId}}}},(err,data)=>{
+        // console.log(data);
         res.send(data);
     })
 }
@@ -105,4 +123,4 @@ async function removemovie(req,res){
 }
 
 
-module.exports={addmovie,getmovies,getmovie,addexisting,getownermovies,removeownermovie,gettopsixmovies,getexistingmovies,removemovie};
+module.exports={addmovie,getmovies,getmovie,addexisting,getownermovies,removeownermovie,gettopsixmovies,getexistingmovies,removemovie,getmoviesbylanguages,getmoviesbycategories};

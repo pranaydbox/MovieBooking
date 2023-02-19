@@ -13,6 +13,7 @@ window.onload=()=>{
     })
 
     $.post("http://localhost:3333/movies/getexistingmovies",{curremail:localStorage.getItem("currentLoginUser")},(xhr,status,responseText)=>{
+        // alert(responseText.responseText)
         var arr=JSON.parse(responseText.responseText);
         for(x in arr){
             obj=arr[x];
