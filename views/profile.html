@@ -31,15 +31,22 @@
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/main.css">
     <style>
-        table,tr,td{
+        ::placeholder {
+            color: black;
+        }
+
+        table,
+        tr,
+        td {
             border: 1px solid black;
             border-collapse: collapse;
-        
+
         }
-        tr,td{
+
+        tr,
+        td {
             padding: 17.5px;
         }
-        
     </style>
 </head>
 
@@ -47,106 +54,186 @@
     <header id="header">
         <div class="header-top">
             <div class="container-fluid">
-              <div class="row align-items-center">
-                  <div class="col-lg-6 col-sm-6 col-6 header-top-left">
-                      <ul>
-                          <li><a href="#">Visit Us</a></li>
-                          <li><a href="#">Buy Tickets</a></li>
-                      </ul>			
-                  </div>
-                  <div class="col-lg-6 col-sm-6 col-6 header-top-right">
-                    <div class="header-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-dribbble"></i></a>
-                        <a href="#"><i class="fa fa-behance"></i></a>
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-sm-6 col-6 header-top-left">
+                        <ul>
+                            <li><a href="#">Visit Us</a></li>
+                            <li><a href="#">Buy Tickets</a></li>
+                        </ul>
                     </div>
-                  </div>
-              </div>			  					
+                    <div class="col-lg-6 col-sm-6 col-6 header-top-right">
+                        <div class="header-social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                            <a href="#"><i class="fa fa-behance"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="container-fluid main-menu">
             <div class="row align-items-center justify-content-between d-flex">
-              <div id="logo">
-                <a href="index.html" style="color: white;text-decoration: none;font-size: 30px;font-weight: bold;">MovieFlix</a>
-              </div>
-              <nav id="nav-menu-container">
-                <ul class="nav-menu">
-                  <li><a 	href="index.html">Home</a></li>
-                  <li><a href="movies.html">Movies</a></li>
-                  <li><a href="theatres.html">Theatres</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                  <li><a href="about.html">About</a></li>
-                  <li id="regButton"><a href="register.html">Register</a></li>
-                  <li id="adminButton"><a href="admin.html">Admin</a></li>
-                  <li id="theatreButton"><a href="theatreOwner.html">Theatre Access</a></li>
-                  <li class="menu-has-children" id="profileButtonMain"><a href="">Hello user!</a>
-                    <ul>
-                      <li><a href="profile.html">Profile</a></li>
-                      <li><a href="" id="lgout">Log Out</a></li>
+                <div id="logo">
+                    <a href="index.html"
+                        style="color: white;text-decoration: none;font-size: 30px;font-weight: bold;">MovieFlix</a>
+                </div>
+                <nav id="nav-menu-container">
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="movies.html">Movies</a></li>
+                        <li><a href="theatres.html">Theatres</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li id="regButton"><a href="register.html">Register</a></li>
+                        <li id="adminButton"><a href="admin.html">Admin</a></li>
+                        <li id="theatreButton"><a href="theatreOwner.html">Theatre Access</a></li>
+                        <li class="menu-has-children" id="profileButtonMain"><a href="">Hello user!</a>
+                            <ul>
+                                <li><a href="profile.html">Profile</a></li>
+                                <li><a href="" id="lgout">Log Out</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                  </li>	
-                </ul>
-              </nav><!-- #nav-menu-container -->					      		  
+                </nav><!-- #nav-menu-container -->
             </div>
         </div>
-        <section>
+        <section style="display:visible;" id="profilesection">
             <div class="container-fluid">
-                <div class="row" style="display: flex;flex-direction: row;justify-content: center;align-items: center;gap: 20px;margin-top: 20px;">
-                    <div class="col-lg-3" style="display: flex;flex-direction: column;justify-content: center;align-items: center;background-color:red;padding: 0px;margin: 0px;border-radius:20px;width: 400px;">
-                        <div style="display: flex;flex-direction: column;justify-content:center;align-items:center;gap: 10px;background-color: blue;width:100%;padding: 20px;;border-top-left-radius: 20px;border-top-right-radius:20px;">
-                            <img style="width: 16rem;height: 16rem;border-radius: 50%;" src="img/myimgs/intialuser.jpg">
-                            <div style="font-size: 30px;font-weight: 800;">Pranay Ramagiri</div>
+                <div class="row"
+                    style="display: flex;flex-direction: row;justify-content: center;align-items: center;gap: 20px;margin-top: 20px;">
+                    <div class="col-lg-3"
+                        style="display: flex;flex-direction: column;justify-content: center;align-items: center;background-color:red;padding: 0px;margin: 0px;border-radius:20px;width: 400px;">
+                        <div
+                            style="display: flex;flex-direction: column;justify-content:center;align-items:center;background-color: blue;width:100%;padding: 20px;;border-top-left-radius: 20px;border-top-right-radius:20px;">
+                            <div style="display: flex;flex-direction: column;">
+                                <img style="width: 16rem;height:16rem;border-radius: 50%;" id="profilepictureimage"
+                                    src="img/myimgs/intialuser.jpg">
+                                <div style="transform: translate(180px,-55px);"><label class="fa fa-camera"
+                                        style="font-size: 25px;color: white;padding:10px;border-radius:50%;cursor: pointer;background-color:black;"
+                                        id="uploadprofile"><input type="file" id="profilepic"
+                                            style="display: none;"></label>
+                                </div>
+                            </div>
+                            <div style="font-size: 30px;font-weight: 800;margin-top:-20px;" id="nameunderpic"></div>
                         </div>
-                        <div style="display: flex;flex-direction: column;justify-content:center;align-items: center;padding: 0px;width:100%;margin: 0px;">
-                            <div style="padding: 10px;width: 100%;text-align:center;border:1px solid white;font-size:18px;font-weight: 500;cursor: pointer;">Edit Profile</div>
-                            <div style="padding: 10px;width: 100%;text-align:center;border:1px solid white;font-size:18px;font-weight: 500;cursor: pointer;">Your Bookings</div>
-                            <div style="padding: 10px;width: 100%;text-align:center;border:1px solid white;font-size:18px;font-weight: 500;cursor: pointer;">Help & Support</div>
-                            <div style="padding: 10px;width: 100%;text-align:center;border:1px solid white;border-bottom-left-radius: 20px;border-bottom-right-radius:20px;font-size:18px;font-weight: 500;cursor: pointer;">Sign Out</div>
+                        <div
+                            style="display: flex;flex-direction: column;justify-content:center;align-items: center;padding: 0px;width:100%;margin: 0px;">
+                            <div class="editicon"
+                                style="padding: 10px;width: 100%;text-align:center;border:1px solid white;font-size:18px;font-weight: 500;cursor: pointer;">
+                                Edit Profile</div>
+                            <div data-toggle="modal" data-target="#yourbookingsmodel"
+                                style="padding: 10px;width: 100%;text-align:center;border:1px solid white;font-size:18px;font-weight: 500;cursor: pointer;">
+                                Your Bookings</div>
+                            <div
+                                style="padding: 10px;width: 100%;text-align:center;border:1px solid white;font-size:18px;font-weight: 500;cursor: pointer;">
+                                Help & Support</div>
+                            <div id="signout"
+                                style="padding: 10px;width: 100%;text-align:center;border:1px solid white;border-bottom-left-radius: 20px;border-bottom-right-radius:20px;font-size:18px;font-weight: 500;cursor: pointer;">
+                                Sign Out</div>
                         </div>
                     </div>
-                    <div class="col-lg-7" style="display: flex;flex-direction: column;justify-content: center;align-items: center;background-color:pink;color: white;border-radius: 20px;width: 400px;gap:20px;padding: 20px;">
+                    <div class="col-lg-7"
+                        style="display: flex;flex-direction: column;justify-content: center;align-items: center;background-color:pink;color: white;border-radius: 20px;width: 400px;gap:20px;padding: 30px;">
                         <div style="font-size:30px;font-weight: 800;width: 100%;" class="row">
                             <div class="col-lg-11" style="text-align: center;">Personal Details</div>
-                            <i class="fa fa-edit col-lg-1" style="cursor: pointer;"></i>
+                            <i class="fa fa-edit col-lg-1 editicon" style="cursor: pointer;"></i>
                         </div>
-                        <table  style="display: flex;flex-direction: column;justify-content: center;align-items: center;color: white;">
+                        <table
+                            style="display: flex;flex-direction: column;justify-content: center;align-items: center;color: white;">
                             <tr class="userdetail" style="width: 400px;">
                                 <td style="width:300px">Name:</td>
-                                <td style="width:600px">Ramagiri Pranay</td>
+                                <td style="width:600px" id="personname"></td>
                             </tr>
                             <tr class="userdetail" style="width: 400px;">
                                 <td style="width:300px">Email:</td>
-                                <td style="width:600px">pranay@gmail.com</td>
+                                <td style="width:600px" id="personemail"></td>
                             </tr>
                             <tr class="userdetail" style="width: 400px;">
                                 <td style="width:300px">Mobile:</td>
-                                <td style="width:600px">9701755690</td>
+                                <td style="width:600px" id="personmobile"></td>
                             </tr>
                             <tr class="userdetail" style="width: 400px;">
                                 <td style="width:300px">Date Of Birth:</td>
-                                <td style="width:600px">11-12-2001</td>
+                                <td style="width:600px" id="persondob"></td>
                             </tr>
                             <tr class="userdetail" style="width: 400px;">
                                 <td style="width:300px">Age</td>
-                                <td style="width:600px">22</td>
+                                <td style="width:600px" id="personage"></td>
                             </tr>
                             <tr class="userdetail" style="width: 400px;">
                                 <td style="width:300px">Gender:</td>
-                                <td style="width:600px">Male</td>
+                                <td style="width:600px" id="persongender"></td>
                             </tr>
                             <tr class="userdetail" style="width: 100%;">
                                 <td style="width:300px">Address:</td>
-                                <td style="width:600px">Do-no:2-17,Musalipedu,Yerpedu,Chittoor,Andhra Pradesh</td>
+                                <td style="width:600px" id="personaddress"></td>
                             </tr>
                         </table>
                     </div>
-                    
+
                 </div>
-    
+
             </div>
+
         </section>
+        <div id="editsection" style="display: none;">
+            <div
+                style="display: flex;flex-direction: column;justify-content: center;align-items: center;gap:20px;background-color: yellow;padding:40px;">
+                <h1>Edit Your Details</h1>
+                <input id="editname" style="color: black;width:45%;padding:8px;border-radius:10px" type="text"
+                    placeholder="Your name">
+                <input id="editmobile" style="color: black;width:45%;padding:8px;border-radius:10px" type="tel"
+                    placeholder="Your Mobile">
+                <div id="editgender"
+                    style="color: black;display: flex;flex-direction: row;justify-content: space-between;align-items:flex-end;">
+                    <h3>Gender</h3>
+                    <div>
+                        <label for="male">Male</label>
+                        <input type="radio" name="genderformname" value="Male">
+                    </div>
+                    <div>
+                        <label for="female">Female</label>
+                        <input type="radio" name="genderformname" value="Female">
+                    </div>
+
+                </div>
+                <input id="editdate" style="color: black;width:45%;padding:8px;border-radius:10px" type="date"
+                    placeholder="Date Of Birth">
+                <textarea id="editaddress" style="color: black;width:45%;padding:8px;border-radius:10px"
+                    placeholder="Enter Your Address"></textarea>
+                <div id="editsavebtn"
+                    style="padding:10px 30px;background-color:green;border-radius:20px;font-size:20px;cursor: pointer;"
+                    id="editsavebtn">Save</div>
+            </div>
+        </div>
+
+
+
     </header><!-- #header -->
+    <!-- Modal -->
+    <div class="modal fade" id="yourbookingsmodel" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content" style="background-color: black;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalScrollableTitle" >Your Bookings</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;gap:20px;width:100%;" id="moviehistory">
+                                                
+                    </div>
+                </div>
+                <div class="modal-footer" style="display:flex;justify-content:center;align-items:center">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer-area section-gap">
         <div class="container">
 
@@ -155,7 +242,7 @@
                     <div class="single-footer-widget">
                         <h6>About Agency</h6>
                         <p>
-                            The world has become so fast paced that people don’t want to stand by reading a page of
+                            The world has become so fast paced that people don't want to stand by reading a page of
                             information, they would much rather look at a presentation and understand the message. It
                             has come to a point
                         </p>
@@ -265,6 +352,10 @@
         else {
             $("#theatreButton").css("display", "block");
         }
+        $("#signout").click(() => {
+            localStorage.setItem("currentLoginUser", 1);
+            window.location.href = "index.html"
+        })
     </script>
     <script src="js/vendor/jquery-2.2.4.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -281,6 +372,7 @@
     <script src="js/mail-script.js"></script>
     <script src="js/main.js"></script>
     <script src="myjs/common.js"></script>
+    <script src="myjs/profile.js"></script>
 </body>
 
 </html>

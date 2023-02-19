@@ -11,10 +11,11 @@ var userSchema={
     gender:{type:String},
     address:{type:String},
     reviews:{type:String},
-    movieHistory:[{movieName:{type:String},theatreName:{type:String},price:{type:Number},seatsBooked:{type:Number}}],
+    movieHistory:[{movieName:{type:String},theatreName:{type:String},price:{type:Number},seatsBooked:{type:Number},movieImage:{type:String}}],
     beverageHistory:{type:Array},
     owner:{type:String},
-    admin:{type:String}
+    admin:{type:String},
+    image:{type:String}
 }
 
 var userModel=mongoose.model("users",userSchema);

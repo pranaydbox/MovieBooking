@@ -6,6 +6,10 @@ function addUser(req,res){
         mobile:req.body.mobile,
         email:req.body.email,
         password:req.body.password,
+        dob:null,
+        image:"multerOperations/uploads/intialuser.jpg",
+        gender:null,
+        address:null,
         owner:"false",
         admin:"false"
     })
@@ -58,6 +62,18 @@ function getprofile(req,res){
 }
 
 
+async function uploadimage(req,res){
+    console.log(req.body.curremail)
+    await usermodel.userModel.updateOne({email:req.body.curremail},{$set:{image:req.file.path}})
+    res.send("Uploaded successfully")
+}
 
 
-module.exports={addUser,validate,getusers,getprofile}
+async function updateprofile(req,res){
+    console.log(req.body);
+    await usermodel.userModel.updateOne({email:req.body.email},{$set:{name:req.body.name,mobile:req.body.mobile,dob:req.body.dob,gender:req.body.gender,address:req.body.address}});
+    res.send("Profile Updated");
+}
+
+
+module.exports={addUser,validate,getusers,getprofile,uploadimage,updateprofile}

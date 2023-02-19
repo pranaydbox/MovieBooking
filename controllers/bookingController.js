@@ -26,7 +26,7 @@ async function getseatstatus(req,res){
 
 
 
-
+ 
 async function booknow(req,res){
     let movieData=await moviemodel.movieModel.findOne({movieId:req.body.movieId});
     let theatreData=await theatremodel.theatreModel.findOne({theatreId:req.body.theatreId})
@@ -37,6 +37,7 @@ async function booknow(req,res){
         theatreName:theatreData.theatreName,
         price:req.body.price,
         seatsBooked:req.body.bookings,
+        movieImage:movieData.cardImage
     }
     var arr=req.body.changedseats;
     // bookingmodel.bookingModel.findOne({pattern:req.body.pattern},(err,data)=>{

@@ -65,10 +65,12 @@ function getmovies(req,res){
     })
 }
 
-function getmovie(req,res){
-    moviemodel.movieModel.findOne({movieId:req.params.id},(err,data)=>{
-        res.send(data);
-    })
+async function getmovie(req,res){
+    var movieData=await moviemodel.movieModel.findOne({movieId:req.params.id});
+    var ratingavg=await moviemodel.movieModel.aggregate([{$unwind:"$reviewObjects"},{$group:{_id:"$movieId","avgrating":{$avg:"$reviewObjects.rating"}}}])
+    var obj=Object.assign({},movieData)
+    obj.ratingavg=ratingavg.avgrating;
+    console.log(ratingavg);
 }
 
 async function removeownermovie(req,res){

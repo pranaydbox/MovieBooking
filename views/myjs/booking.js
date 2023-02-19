@@ -2,6 +2,7 @@ var ar;
 var theatredata;
 var moviedata;
 var price = { "category D": 120, "category C": 150, "category B": 180, "category A": 200 }
+var cost;
 window.onload = async function () {
     var resstr = window.location.hash.substring(1);
     $.post("http://localhost:3333/bookings/getseatstatus", { pattern: resstr }, (xhr, status, responseText) => {
@@ -38,6 +39,7 @@ function makeseats(arr) {
 function getmovietheatredata(moviedata, theatredata) {
     var arr = window.location.hash.substring(1).split(":");
     total = price[theatredata.category] * count;
+    cost=price[theatredata.category];
     var str = ""
     for (i in seatsarr) str = str + "," + seatsarr[i];
     localStorage.setItem("seatsarr", str.substring(1))
@@ -94,7 +96,7 @@ function confirmbooking() {
         }
     }
     var arr = window.location.hash.substring(1).split(":");
-    $.post("http://localhost:3333/bookings/booknow", { movieId: arr[0], theatreId: arr[1], bookings: count, curremail: localStorage.getItem("currentLoginUser"), changedseats: ar, pattern: window.location.hash.substring(1) }, (xhr, status, responseText) => {
+    $.post("http://localhost:3333/bookings/booknow", {price:cost,movieId: arr[0], theatreId: arr[1], bookings: count, curremail: localStorage.getItem("currentLoginUser"), changedseats: ar, pattern: window.location.hash.substring(1) }, (xhr, status, responseText) => {
         alert(responseText.responseText);
         window.location.href = "confirmed.html#" + window.location.hash.substring(1);
     })
