@@ -48,16 +48,28 @@ function getmovietheatredata(moviedata, theatredata) {
     var seat = localStorage.getItem("seatsarr").split(":")
     $("#confirmingdata").html("")
     $("#confirmingdata").append(
-        `<table style="margin: auto;">
-        <tr><td>Movie Name</td><td>:</td><td>${moviedata.name}</td></tr>
-        <tr><td>Duration</td><td>:</td><td>${moviedata.duration}</td></tr>
-        <tr><td>Category</td><td>:</td><td>${moviedata.category}</td></tr>
-        <tr><td>Theatre Name</td><td>:</td><td>${theatredata.theatreName}</td></tr>
-        <tr><td>Location</td><td>:</td><td>${theatredata.location}</td></tr>
-        <tr><td>No of Seats</td><td>:</td><td>${count}</td></tr>
-        <tr><td>Ticket Price</td><td>:</td><td>${price[theatredata.category]}</td></tr>
-        <tr><td>Seats No</td><td>:</td><td>${localStorage.getItem("seatsarr")}</td></tr>
-        <tr><td>Total Price</td><td>:</td><td>${count}*${price[theatredata.category]} = ${price[theatredata.category] * count}</td></tr>
+        `<table style="margin: auto;padding:0px">
+        <tr><td style="text-align:center;padding:2px 10px;font-size:18px">Movie Name</td><td style="text-align:center;padding:2px 10px;font-size:18px">:</td><td style="text-align:center;padding:2px 10px;font-size:18px">${moviedata.name}</td></tr>
+        <tr><td style="text-align:center;padding:2px 10px;font-size:18px">Duration</td><td style="text-align:center;padding:2px 10px;font-size:18px">:</td><td style="text-align:center;padding:2px 10px;font-size:18px">${moviedata.duration}M</td></tr>
+        <tr><td style="text-align:center;padding:2px 10px;font-size:18px">Category</td><td style="text-align:center;padding:2px 10px;font-size:18px">:</td><td style="text-align:center;padding:2px 10px;font-size:18px">${moviedata.category}</td></tr>
+        <tr><td style="text-align:center;padding:2px 10px;font-size:18px">Theatre Name</td><td style="text-align:center;padding:2px 10px;font-size:18px">:</td><td style="text-align:center;padding:2px 10px;font-size:18px">${theatredata.theatreName}</td></tr>
+        <tr><td style="text-align:center;padding:2px 10px;font-size:18px">Location</td><td style="text-align:center;padding:2px 10px;font-size:18px">:</td><td style="text-align:center;padding:2px 10px;font-size:18px">${theatredata.location}</td></tr>
+        <tr><td style="text-align:center;padding:2px 10px;font-size:18px">No of Seats</td><td style="text-align:center;padding:2px 10px;font-size:18px">:</td><td style="text-align:center;padding:2px 10px;font-size:18px">${count}</td></tr>
+        <tr><td style="text-align:center;padding:2px 10px;font-size:18px">Price</td><td style="text-align:center;padding:2px 10px;font-size:18px">:</td><td style="text-align:center;padding:2px 10px;font-size:18px">${price[theatredata.category]}</td></tr>
+        <tr><td style="text-align:center;padding:2px 10px;font-size:18px">Seats No</td><td style="text-align:center;padding:2px 10px;font-size:18px">:</td><td style="text-align:center;padding:2px 10px;font-size:18px">${localStorage.getItem("seatsarr")}</td></tr>
+        <tr><td style="text-align:center;padding:2px 10px;font-size:18px">Total Price</td><td style="text-align:centerCONFIRM YOUR TICKETS
+        ￼×
+        Movie Name	:	veerasimha.jpg
+        Duration	:	140
+        Category	:	Action
+        Theatre Name	:	SVC
+        Location	:	HYD
+        No of Seats	:	0
+        Ticket Price	:	200
+        Seats No	:	
+        Total Price	:	0*200 = 0
+        ￼cancel Ticket
+        ￼Book Ticket;padding:2px 10px;font-size:18px">:</td><td style="text-align:center;padding:2px 10px;font-size:18px">${count}*${price[theatredata.category]} = ${price[theatredata.category] * count}</td></tr>
         </table>`
     )
 

@@ -9,15 +9,15 @@ window.onload=()=>{
             var temp="";
             var y=0;
             for(var i=0;i<parseInt(data[x].rating);i++){
-                temp=temp+`<div class="fa fa-star checked" style="color:red"></div>`;
+                temp=temp+`<div class="fa fa-star checked" style="color:gold"></div>`;
                 y++;
                 
             }
             while(y<5){
-                temp=temp+`<div class="fa fa-star" style="color:black"></div>`;
+                temp=temp+`<div class="fa fa-star" style="color:white"></div>`;
                 y++;
             }
-            $("#reviewContainer").append(`<div class="card col-lg-12" style="color:black;border-radius:10px;">
+            $("#reviewContainer").append(`<div class="card col-lg-12" style="color:white;border-radius:10px;box-shadow:2px 2px 10px 2px grey;background-color:black">
                 <div class='card-body' style="display:flex;flex-direction:column;justify-content:center;gap:20px">
                     <div style="display:flex;flex-direction:row;align-items:center;gap:25px;justify-content:flex-start">
                         <div class='fa fa-user-circle' style="z-index:100;font-size:50px"></div>

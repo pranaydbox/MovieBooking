@@ -168,12 +168,12 @@
 
         #confirm{
             background-color: black;
-            box-shadow: 2px 2px 10px 10px grey;
+            box-shadow: 2px 1px 10px 2px grey;
         }
     </style>
 </head>
 
-<body>
+<body style="background-color: black;">
     <header id="header">
 
         <div class="container-fluid main-menu">
@@ -184,17 +184,17 @@
                 </div>
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="movies.html">Movies</a></li>
-                        <li><a href="theatres.html">Theatres</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li id="regButton"><a href="register.html">Register</a></li>
-                        <li id="adminButton"><a href="admin.html">Admin</a></li>
-                        <li class="menu-has-children" id="profileButtonMain"><a href="">Hello user!</a>
+                        <li><a style="text-decoration: none;" href="index.html">Home</a></li>
+                        <li><a style="text-decoration: none;" href="movies.html">Movies</a></li>
+                        <li><a style="text-decoration: none;" href="theatres.html">Theatres</a></li>
+                        <li><a style="text-decoration: none;" href="contact.html">Contact</a></li>
+                        <li><a style="text-decoration: none;" href="about.html">About</a></li>
+                        <li id="regButton"><a style="text-decoration: none;" href="register.html">Register</a></li>
+                        <li id="adminButton"><a style="text-decoration: none;" href="admin.html">Admin</a></li>
+                        <li class="menu-has-children" id="profileButtonMain"><a style="text-decoration: none;" href="">Hello user!</a>
                             <ul>
-                                <li><a href="profile.html">Profile</a></li>
-                                <li><a href="" id="lgout">Log Out</a></li>
+                                <li><a style="text-decoration: none;" href="profile.html">Profile</a></li>
+                                <li><a style="text-decoration: none;" href="" id="lgout">Log Out</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -292,20 +292,20 @@
                 <div class="modal-content" id="confirm">
                     <div class="modal-header">
                         <h3 class="modal-title" id="exampleModalLongTitle"
-                            style="color: yellow;font-weight: bold;text-align: center;text-transform: uppercase;">
+                            style="color:white;font-weight: bold;text-align: center;text-transform: uppercase;">
                             Confirm your tickets</h3>
                         <button type="button" class="close" data-dismiss="modal"
-                            style="background-color: rgb(244, 238, 238);" aria-label="Close">
+                            style="color: white;" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body" style="width: 80%;margin: auto;" id="confirmingdata" >
+                    <div class="modal-body" style="width: 80%;margin: auto;padding: 0px;" id="confirmingdata" >
                         
                     </div>
                     <div class="modal-footer" style="display: flex;justify-content: center;align-items: center;">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal" style="color: yellow;">cancel
+                        <button  data-dismiss="modal" style="color: yellow;background-color: black;box-shadow:2px 1px 10px 2px grey;padding:6px 14px;">cancel
                             Ticket</button>
-                        <button type="button" class="btn btn-primary" style="color: yellow;" onclick="confirmbooking()">Book Ticket</button>
+                        <button onclick="confirmbooking()" style="color: yellow;background-color: black;box-shadow:2px 1px 10px 2px grey;padding:6px 14px;">Book Ticket</button>
                     </div>
                 </div>
             </div>
@@ -314,7 +314,7 @@
     <div  onclick="getconfirmingdata()" data-toggle="modal" data-target="#exampleModalCenter"
         style="width:100%;display: flex;justify-content: center;align-items: center;padding: 15px;position: absolute;bottom: 0;">
         <div
-            style="background-color: black;color: white;padding: 10px;border-radius: 20px;font-size:17px;cursor: pointer;">
+            style="background-color: black;color: white;padding: 10px;border-radius: 20px;font-size:17px;cursor: pointer;box-shadow:2px 2px 10px 2px grey;">
             Confirm Booking</div>
     </div>
     <script>

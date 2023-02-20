@@ -7,7 +7,7 @@ window.onload = function () {
 
 
 function adddatatoprofile(obj) {
-    alert(obj.image)
+    // alert(obj.image)
     var dob = new Date(obj.dob);
     var month_diff = Date.now() - dob.getTime();
     var age_dt = new Date(month_diff);

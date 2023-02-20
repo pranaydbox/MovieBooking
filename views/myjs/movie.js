@@ -15,7 +15,8 @@ window.onload = () => {
             $("#movieduration").html(Math.floor(data.duration / 60) + "h" + (data.duration % 60) + "m");
             $("#language").html(data.languages);
             $("#startDate").html(data.startDate.substring(0, 10));
-            $("#movierating").html(data.ratingavg*2)
+            // $("#movierating").html(Math.round(data.ratingavg*2,2));
+            $("#movierating").html("9")
             addtheatres(data.theatreObjects, "Hyderabad");
             addreviewstobottom(data.reviewObjects);
         })
@@ -54,15 +55,15 @@ function addreviewstobottom(data) {
         var temp = "";
         var y = 0;
         for (var i = 0; i < parseInt(data[x].rating); i++) {
-            temp = temp + `<div class="fa fa-star checked" style="color:red"></div>`;
+            temp = temp + `<div class="fa fa-star checked" style="color:gold"></div>`;
             y++;
 
         }
         while (y < 5) {
-            temp = temp + `<div class="fa fa-star" style="color:black"></div>`;
+            temp = temp + `<div class="fa fa-star" style="color:white"></div>`;
             y++;
         }
-        $("#bottomreviewContainer").append(`<div class="card col-lg-5" style="color:black;border-radius:20px;">
+        $("#bottomreviewContainer").append(`<div class="card col-lg-5" style="color:white;border-radius:20px;background-color:black;box-shadow:2px 1px 8px 0px grey">
             <div class='card-body' style="display:flex;flex-direction:column;justify-content:center;gap:20px">
                 <div style="display:flex;flex-direction:row;align-items:center;gap:25px;justify-content:flex-start">
                     <div class='fa fa-user-circle' style="z-index:100;font-size:50px"></div>

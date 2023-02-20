@@ -66,7 +66,7 @@
                     margin-top: 30px;
                     margin-bottom: 30px;
                     width: 80%;
-                    box-shadow:2px 2px 10px 10px rgb(122, 122, 122);
+                    box-shadow:2px 2px 8px 4px rgb(122, 122, 122);
                     
                 }
 
@@ -111,28 +111,42 @@
 				</div>
             </header>#header -->
             
-            <h3 style="text-decoration:underline 1px;font-weight: bold;font-size: 40px;text-align: center;margin: 20px;">Your Ticket Booked Succesfully!</h3>
+            <h3 style="font-weight: bold;font-size: 40px;text-align: center;margin: 20px;">Your Ticket Booked Succesfully!</h3>
            
-            <div id="ticket" >
+            <div id="ticket" style="width: 50%;">
                 
 
                 
                 
             </div>
-            <div style="display: flex;flex-direction: row;justify-content: center;align-items: center;">
-                <div><a href="index.html" style="text-decoration: none; color: white;">Home</a>&nbsp &nbsp <a style="color:white" onclick="generatePDF()">Download Ticket</a></div>
+            <div style="display: none;">
+                <div id="ticketpdf" style="width: 794px;margin: auto;margin-left:100px;">
+
+                </div>
+            </div>
+            
+            <div style="display: flex;flex-direction: row;justify-content: center;align-items: center;padding:0px 0px 40px 0px;">
+                <div><a href="index.html" style="text-decoration: none; color: white;background-color: black;box-shadow: 2px 2px 10px 2px grey;">Home</a>&nbsp &nbsp <a style="color:white;background-color: black;box-shadow: 2px 2px 10px 2px grey;" onclick="generatePDF()">Download Ticket</a></div>
             </div>
             <script>
 				
                 async function generatePDF(){
 
-                    const element=document.getElementById("ticket");
+                    const element=document.getElementById("ticketpdf");
                     var opt = {
-                    margin:       1,
+                    margin:       0,
                     filename:     'ticket.pdf',
                     image:        { type: 'jpeg', quality: 0.98 },
-                    html2canvas:  { scale: 2 },
+                    html2canvas:  { scale: 1 , width: 1000,height:1000},
                     jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' },
+    //                 html2canvas: {
+    // backgroundColor: "#fff",
+    // scale: window.devicePixelRatio,
+    // y: 0,
+    // x: 0,
+    // scrollY: 0,
+    // scrollX: 0,
+  
                     // data:"hello world jfldjlfaalj"
                     };
 

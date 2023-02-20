@@ -32,13 +32,13 @@
     <link rel="stylesheet" href="css/main.css">
     <style>
         ::placeholder {
-            color: black;
+            color: white;
         }
 
         table,
         tr,
         td {
-            border: 1px solid black;
+            border: 1px solid white;
             border-collapse: collapse;
 
         }
@@ -103,9 +103,9 @@
                 <div class="row"
                     style="display: flex;flex-direction: row;justify-content: center;align-items: center;gap: 20px;margin-top: 20px;">
                     <div class="col-lg-3"
-                        style="display: flex;flex-direction: column;justify-content: center;align-items: center;background-color:red;padding: 0px;margin: 0px;border-radius:20px;width: 400px;">
+                        style="display: flex;flex-direction: column;justify-content: center;align-items: center;background-color:black;padding: 0px;margin: 0px;border-radius:20px;width: 400px;box-shadow:2px 1px 10px 1px grey;">
                         <div
-                            style="display: flex;flex-direction: column;justify-content:center;align-items:center;background-color: blue;width:100%;padding: 20px;;border-top-left-radius: 20px;border-top-right-radius:20px;">
+                            style="display: flex;flex-direction: column;justify-content:center;align-items:center;background-color: black;width:100%;padding: 20px;;border-top-left-radius: 20px;border-top-right-radius:20px;">
                             <div style="display: flex;flex-direction: column;">
                                 <img style="width: 16rem;height:16rem;border-radius: 50%;" id="profilepictureimage"
                                     src="img/myimgs/intialuser.jpg">
@@ -121,21 +121,21 @@
                         <div
                             style="display: flex;flex-direction: column;justify-content:center;align-items: center;padding: 0px;width:100%;margin: 0px;">
                             <div class="editicon"
-                                style="padding: 10px;width: 100%;text-align:center;border:1px solid white;font-size:18px;font-weight: 500;cursor: pointer;">
+                                style="padding: 10px;width: 100%;text-align:center;border-top:1px solid white;font-size:18px;font-weight: 500;cursor: pointer;">
                                 Edit Profile</div>
                             <div data-toggle="modal" data-target="#yourbookingsmodel"
-                                style="padding: 10px;width: 100%;text-align:center;border:1px solid white;font-size:18px;font-weight: 500;cursor: pointer;">
+                                style="padding: 10px;width: 100%;text-align:center;border-top:1px solid white;font-size:18px;font-weight: 500;cursor: pointer;">
                                 Your Bookings</div>
                             <div
-                                style="padding: 10px;width: 100%;text-align:center;border:1px solid white;font-size:18px;font-weight: 500;cursor: pointer;">
+                                style="padding: 10px;width: 100%;text-align:center;border-top:1px solid white;font-size:18px;font-weight: 500;cursor: pointer;">
                                 Help & Support</div>
                             <div id="signout"
-                                style="padding: 10px;width: 100%;text-align:center;border:1px solid white;border-bottom-left-radius: 20px;border-bottom-right-radius:20px;font-size:18px;font-weight: 500;cursor: pointer;">
+                                style="padding: 10px;width: 100%;text-align:center;border-top:1px solid white;border-bottom:1px solid white;border-bottom-left-radius: 20px;border-bottom-right-radius:20px;font-size:18px;font-weight: 500;cursor: pointer;">
                                 Sign Out</div>
                         </div>
                     </div>
                     <div class="col-lg-7"
-                        style="display: flex;flex-direction: column;justify-content: center;align-items: center;background-color:pink;color: white;border-radius: 20px;width: 400px;gap:20px;padding: 30px;">
+                        style="display: flex;flex-direction: column;justify-content: center;align-items: center;background-color:black;box-shadow:2px 1px 10px 2px grey;color: white;border-radius: 20px;width: 400px;gap:20px;padding: 30px;">
                         <div style="font-size:30px;font-weight: 800;width: 100%;" class="row">
                             <div class="col-lg-11" style="text-align: center;">Personal Details</div>
                             <i class="fa fa-edit col-lg-1 editicon" style="cursor: pointer;"></i>
@@ -178,33 +178,33 @@
             </div>
 
         </section>
-        <div id="editsection" style="display: none;">
+        <div id="editsection" style="display: none;box-shadow:2px 1px 10px 2px grey;width:50%;margin-top:20px;" class="container">
             <div
-                style="display: flex;flex-direction: column;justify-content: center;align-items: center;gap:20px;background-color: yellow;padding:40px;">
+                style="display: flex;flex-direction: column;justify-content: center;align-items: center;gap:20px;background-color: black;padding:40px;">
                 <h1>Edit Your Details</h1>
-                <input id="editname" style="color: black;width:45%;padding:8px;border-radius:10px" type="text"
+                <input id="editname" style="color: white;border:1px solid white;width:80%;padding:8px;border-radius:10px;background-color: black;" type="text"
                     placeholder="Your name">
-                <input id="editmobile" style="color: black;width:45%;padding:8px;border-radius:10px" type="tel"
+                <input id="editmobile" style="color: white;border:1px solid white;width:80%;padding:8px;border-radius:10px;background-color: black;" type="tel"
                     placeholder="Your Mobile">
                 <div id="editgender"
-                    style="color: black;display: flex;flex-direction: row;justify-content: space-between;align-items:flex-end;">
+                    style="color: black;display: flex;flex-direction: row;justify-content: center;align-items:center;gap:100px;;background-color: black;">
                     <h3>Gender</h3>
                     <div>
-                        <label for="male">Male</label>
+                        <label style="color: white;font-size:20px;" for="male">Male</label>
                         <input type="radio" name="genderformname" value="Male">
                     </div>
                     <div>
-                        <label for="female">Female</label>
+                        <label style="color: white;font-size:20px;" for="female">Female</label>
                         <input type="radio" name="genderformname" value="Female">
                     </div>
 
                 </div>
-                <input id="editdate" style="color: black;width:45%;padding:8px;border-radius:10px" type="date"
+                <input id="editdate" style="color: white;border:1px solid white;width:80%;padding:8px;border-radius:10px;background-color: black;" type="date"
                     placeholder="Date Of Birth">
-                <textarea id="editaddress" style="color: black;width:45%;padding:8px;border-radius:10px"
+                <textarea id="editaddress" style="color: white;border:1px solid white;width:80%;padding:8px;border-radius:10px;background-color: black;"
                     placeholder="Enter Your Address"></textarea>
                 <div id="editsavebtn"
-                    style="padding:10px 30px;background-color:green;border-radius:20px;font-size:20px;cursor: pointer;"
+                    style="padding:10px 30px;background-color:black;border-radius:20px;font-size:20px;cursor: pointer;box-shadow:2px 1px 10px 2px grey;"
                     id="editsavebtn">Save</div>
             </div>
         </div>
