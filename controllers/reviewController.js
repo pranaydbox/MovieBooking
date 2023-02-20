@@ -8,9 +8,9 @@ async function addreview(req,res){
         email:req.body.email,
         rating:req.body.rating,
         review:req.body.review,
-        date:new Date()
+        date:new Date(),
+        userimage:req.body.userimage
     }
-    console.log(obj);
     await reviewmodel.reviewModel.updateOne({movieId:req.body.movieId},{$push:{reviews:obj}});
     await moviemodel.movieModel.updateOne({movieId:req.body.movieId},{$push:{reviewObjects:obj}})
     res.send("Review added successfully");

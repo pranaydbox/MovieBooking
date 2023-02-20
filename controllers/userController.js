@@ -1,4 +1,6 @@
 var usermodel=require("../models/userModel.js");
+var moviemodel=require("../models/movieModel");
+var reviewmodel=require("../models/reviewModel");
 
 function addUser(req,res){
     var user=new usermodel.userModel({
@@ -63,15 +65,17 @@ function getprofile(req,res){
 
 
 async function uploadimage(req,res){
-    console.log(req.body.curremail)
     await usermodel.userModel.updateOne({email:req.body.curremail},{$set:{image:req.file.path}})
+    await moviemodel.movieModel.updateMany({"reviewObjects.email":req.body.curremail},{$set:{"reviewObjects.$.userimage":req.file.path}});
+    await reviewmodel.reviewModel.updateMany({"reviews.email":req.body.curremail},{$set:{"reviews.$.userimage":req.file.path}})
     res.send("Uploaded successfully")
 }
 
 
 async function updateprofile(req,res){
-    console.log(req.body);
     await usermodel.userModel.updateOne({email:req.body.email},{$set:{name:req.body.name,mobile:req.body.mobile,dob:req.body.dob,gender:req.body.gender,address:req.body.address}});
+    await moviemodel.movieModel.updateMany({"reviewObjects.email":req.body.email},{$set:{"reviewObjects.$.name":req.body.name}});
+    await reviewmodel.reviewModel.updateMany({"reviews.email":req.body.email},{$set:{"reviews.$.name":req.body.name}});
     res.send("Profile Updated");
 }
 

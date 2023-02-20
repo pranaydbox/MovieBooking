@@ -138,22 +138,8 @@
                     filename:     'ticket.pdf',
                     image:        { type: 'jpeg', quality: 0.98 },
                     html2canvas:  { scale: 1 , width: 1000,height:1000},
-                    jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' },
-    //                 html2canvas: {
-    // backgroundColor: "#fff",
-    // scale: window.devicePixelRatio,
-    // y: 0,
-    // x: 0,
-    // scrollY: 0,
-    // scrollX: 0,
-  
-                    // data:"hello world jfldjlfaalj"
-                    };
-
-                    // New Promise-based usage:
-                    // await html2pdf().set(opt).from(element).save();
-
-                    // Old monolithic-style usage:
+                    jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+                    }
                     await html2pdf(element, opt);
 
                 }
