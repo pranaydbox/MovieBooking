@@ -14,6 +14,9 @@ theatreRoute.post("/rejecttheatre",theatreController.rejecttheatre)
 theatreRoute.post("/getacceptedtheatres",theatreController.getacceptedtheatres);
 theatreRoute.get("/getsingletheatre/:theatreId",theatreController.getsingletheatre)
 
+theatreRoute.post("/gettheatreDetails",theatreController.gettheatreDetails);
+
+
 
 
 

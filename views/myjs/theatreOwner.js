@@ -29,6 +29,23 @@ window.onload=()=>{
         addMoviesToAdmin(data);
     })
 
+    $.post("http://localhost:3333/theatres/gettheatreDetails",{curremail:localStorage.getItem("currentLoginUser")},(xhr,status,responseText)=>{
+        console.log(responseText)
+        var arr=JSON.parse(responseText.responseText);
+        console.log(arr)
+        console.log(arr[0])
+        var price = { "category D": 120, "category C": 150, "category B": 180, "category A": 200 }
+        $("#TheatreName").append(arr[0].theatreName)
+        $("#TheatreLocation").append(arr[0].location)
+        $("#theatreCardImage").attr("src","../../"+arr[0].theatreImage);
+        $("#moviesCount").append(arr[0].movieObjects.length)
+        $("#bookedseats").append(arr[0].bookings)
+        var cat=arr[0].category
+        var rev=price[cat]*arr[0].bookings
+        $("#revenue").append(rev)
+
+    })
+
 
 
 }
@@ -39,22 +56,29 @@ function addMoviesToAdmin(arr) {
         var ele=document.createElement("li");
         ele.className="list-group-item pt-0";
         ele.id=obj.movieId;
-        ele.innerHTML="<div class='d-flex align-items-center'><div class='flex-shrink-0 me-3'><img src='../"+obj.cardImage+"'"+" alt='' class='avatar rounded-circle' /></div><div class='flex-grow-1'><h6 class='mb-0' id='existingMovieName'>"+obj.name+"</h6></div><div class='flex-shrink-0 text-end'><span><div ><a class='btn btn-primary'  href='reviews.html#"+obj.movieId+"'>See Reviews</a></div></span></div></div>  "    
+        ele.innerHTML=`<div class="card mb-3">
+        <div class="card-body">
+          <div class="d-flex flex-column flex-lg-row">
+            <img class="avatar avatar-text rounded-3 me-4 mb-2" src="../${obj.cardImage}" id="">
+            <div class="row flex-fill">
+              <div class="col-sm-5">
+                <h4 class="h5">${obj.name}</h4>
+                <span class="badge bg-success" style="width: 50%;height:20%;"><span>$</span></span>
+                </div>
+              <div class="col-sm-4 py-2">
+              <a href="#" class="btn btn-primary stretched-link" style="background-color: orange;"><span>Bookings:</span></a>
+              </div>
+              <div class="col-sm-3 text-lg-end">
+                <a href="reviews.html#${obj.movieId}" class="btn btn-primary stretched-link">See Reviews</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`
+        //ele.innerHTML="<div class='d-flex align-items-center'><div class='flex-shrink-0 me-3'><img src='../"+obj.cardImage+"'"+" alt='' class='avatar rounded-circle' /></div><div class='flex-grow-1'><h6 class='mb-0' id='existingMovieName'>"+obj.name+"</h6></div><div class='flex-shrink-0 text-end'><span><div ><a class='btn btn-primary'  href='reviews.html#"+obj.movieId+"'>See Reviews</a></div></span></div></div>  "    
         $("#seereviewscontainer").append(ele);
     }
-    // for (x in arr) {
-    //     obj = arr[x];
-    //     var ele = document.createElement("div");
-    //     ele.className = "list-group-item pt-0";
-    //     ele.id = obj.movieId;
-    //     ele.innerHTML = `<div style="display: flex;flex-direction: column;border: 1px solid black;">
-    //         <img src="../${obj.cardImage}">
-    //         <div>${obj.name}</div>
-    //         <a href="reviews.html#${obj.movieId}"+>Reviews</a>
-    //         <div onclick="deletemovie('${obj.movieId}')">Remove Movie</div>
-    //     </div>`
-    //     $("#seereviewscontainer").append(ele);
-    // }
+    
 }
 
 

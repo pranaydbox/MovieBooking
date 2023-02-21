@@ -114,5 +114,12 @@ function getsingletheatre(req, res) {
     })
 }
 
+function gettheatreDetails(req,res){
+    theatremodel.theatreModel.find({ownerEmail:req.body.curremail},(err,data)=>{
+        res.send(data);
+    });
 
-module.exports = { addtheatre, updatetheatre, removemoviefromtheatre, gettheatre, accepttheatre, removetheatre, getacceptedtheatres, gettheatres, gettopthreetheatres, rejecttheatre, getsingletheatre };
+}
+
+
+module.exports = { addtheatre, updatetheatre, removemoviefromtheatre, gettheatre, accepttheatre, removetheatre, getacceptedtheatres, gettheatres, gettopthreetheatres, rejecttheatre, getsingletheatre,gettheatreDetails };
